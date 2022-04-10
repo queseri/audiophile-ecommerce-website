@@ -1,0 +1,16 @@
+@use "sass:math";
+@use "sass:color";
+
+/* ----------------------------------- */
+/*          CUSTOM PROPERTIES          */
+/* ------------------------------------*/
+/*        MAIN-ACCENT COLOURS          */
+/*-------------------------------------*/
+
+$clr-beige: hsl(22, 65%, 57%);
+$clr-almost-black: hsl(0, 0%, 6%);
+$clr-light-gray: hsl(0, 0%, 95%);
+$clr-very-light-gray: hsl(0, 0%, 98%);
+$clr-peach: hsl(21, 94%, 75%);
+$clr-black: hsl(0, 0%, 0%);
+$clr-white: hsl(0, 0%, 100%);
