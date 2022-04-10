@@ -1,0 +1,11 @@
+@use "sass:math";
+@use "sass:color";
+@use '../base';
+
+.nav-list {
+	position: absolute;
+	top: 5rem;
+	left: 0;
+	width: 100%;
+	background-color: base.$clr-white
+}
