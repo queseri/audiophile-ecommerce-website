@@ -1,0 +1,17 @@
+@use "sass:math";
+@use "sass:color";
+@use '../base';
+
+.btns {
+	background-color: inherit;
+	border: none;
+    outline: none;
+
+    &:focus,
+    &:hover {
+        color: base.$clr-white;
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.15em;
+    }
+}

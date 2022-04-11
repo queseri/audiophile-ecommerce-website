@@ -1,11 +1,33 @@
 @use "sass:math";
 @use "sass:color";
 @use '../base';
+@use '../utils';
 
 .nav-list {
-	position: absolute;
-	top: 5rem;
-	left: 0;
-	width: 100%;
-	background-color: base.$clr-white
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: base.$clr-white;
+	display: none;
+}
+
+.nav-list-show {
+	display: block;
+}
+
+.menu-ctrl {
+    flex: 1 1 50%;
+
+    @include utils.mQ(38.75rem) {
+        justify-content: start;
+        gap: 2rem;
+    }
+}
+
+.cart-container {
+    flex: 1 1 20%;
+    display: flex;
+    justify-content: flex-end;
+
 }

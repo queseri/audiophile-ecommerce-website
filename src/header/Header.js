@@ -5,14 +5,16 @@ import Logo from '../assets/shared/desktop/logo.svg'
 
 function Header() {
     return (
-        <header className='header'>
-            <nav className='nav container flex'>
-                <button className="btn-menu-control">
-                    <img src={Hamburger} alt="" />
-                </button>
-                <a href="./">
-                    <img src={Logo} alt="" />
-                </a>
+        <header className="header">
+            <nav className="nav container flex">
+                <div className="menu-ctrl flex">
+                    <button className="btns btn-menu-control">
+                        <img src={Hamburger} alt="" />
+                    </button>
+                    <a className="btn-logo" href="./">
+                        <img src={Logo} alt="" />
+                    </a>
+                </div>
                 <ul className="nav-list">
                     <li className="nav-list-item">
                         Home
@@ -27,24 +29,24 @@ function Header() {
                         Earphones
                     </li>
                 </ul>
-                <button className="btn-cart">
-                    <img src={CartIcon} alt="" />
-                </button>
+                <div className="cart-container">
+                    <button className="btns btn-cart">
+                        <img src={CartIcon} alt="" />
+                    </button>
+                </div>
             </nav>
             <div className="hero">
-                <h1 className="hero-title">
-                    <span className="hero-title-light">
-                        New product
-                    </span>
-                    XX99 Mark II Headphones
-                </h1>
-                <p className="hero-content">
-                    Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
-                </p>
-                <a href="/" className="btn-view-product">
-                    See product
-                </a>
-
+                <div className="hero-content-container">
+                    <h1 className="sr-only">Audiophile entertainment products</h1>
+                    <h2 className="hero-title">New product</h2>
+                    <h3 className="hero-title-secondary"> XX99 Mark II Headphones </h3>
+                    <p className="hero-content">
+                        Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
+                    </p>
+                    <a href="/" className="btn-view-product">
+                        See product
+                    </a>
+                </div>
             </div>
         </header>
     )
