@@ -3,6 +3,11 @@
 @use '../base';
 @use '../utils';
 
+.nav {
+    max-width: 69.375rem;
+    margin-inline: auto;
+}
+
 .nav-list {
     position: absolute;
     top: 5rem;
@@ -10,14 +15,26 @@
     width: 100%;
     background-color: base.$clr-white;
 	display: none;
+
+    @include utils.mQ(61.25rem) {
+        display: flex;
+        position: relative;
+        top: 0;
+        background-color: inherit;
+        color: base.$clr-white;
+        justify-content: space-evenly;
+    }
 }
 
 .nav-list-show {
 	display: block;
+    @include utils.mQ(61.25rem) {
+        display: flex;
+     }
 }
 
 .menu-ctrl {
-    flex: 1 1 50%;
+    flex: 1 1 65%;
 
     @include utils.mQ(38.75rem) {
         justify-content: start;

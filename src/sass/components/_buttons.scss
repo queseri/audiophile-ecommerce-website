@@ -1,10 +1,11 @@
 @use "sass:math";
 @use "sass:color";
-@use '../base';
+@use "../base";
+@use "../utils";
 
 .btns {
-	background-color: inherit;
-	border: none;
+    background-color: inherit;
+    border: none;
     outline: none;
 
     &:focus,
@@ -13,5 +14,28 @@
         cursor: pointer;
         outline: dashed currentColor;
         outline-offset: 0.15em;
+    }
+}
+
+.btn-view-product {
+    padding: .8rem 1rem;
+    background: base.$clr-beige;
+    font-size: base.$fs-14;
+    display: block;
+    margin: auto;
+    max-width: 10rem;
+    color: base.$clr-white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include utils.mQ(61.25rem) {
+        margin-inline-start: 0;
+    }
+}
+
+.btn-menu-control {
+    @include utils.mQ(61.25rem) {
+        display: none;
     }
 }

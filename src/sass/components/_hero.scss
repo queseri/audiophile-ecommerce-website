@@ -1,40 +1,82 @@
 @use "sass:math";
 @use "sass:color";
-@use '../base';
+@use "../base";
+@use "../utils";
 
 .hero {
+    //  background-color: black;
     background-image: url('../../assets/home/mobile/image-header.jpg');
-    background-position: center;
+    background-position: 100% 100%;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include utils.mQ(38.75rem) {
+        background-image: url('../../assets/home/tablet/image-header.jpg');
+        background-position: 100% 60%;
+    }
+
+    @include utils.mQ(61.25rem) {
+        background-size: contain;
+    }
+}
+
+.hero-container {
+    max-width: 69.375rem;
+    margin-inline: auto;
 }
 
 .hero-content-container {
-	padding-block: 6rem;
-	padding-inline: 1.5rem;
+    padding-block: 6rem;
+    padding-inline: 1.5rem;
+    max-width: 23.6875rem;
+    margin-inline: auto;
+
+    @include utils.mQ(61.25rem) {
+        margin-inline-start: 0;
+    }
 }
 
 .hero-title {
-    font-size: 0.875rem;
+    font-size: base.$fs-14;
     color: base.$clr-white;
     opacity: 0.4;
     text-transform: uppercase;
     letter-spacing: 10px;
     text-align: center;
     font-weight: 400;
+    margin-block: 1rem;
+
+    @include utils.mQ(61.25rem) {
+        text-align: start;
+    }
 }
 
 .hero-title-secondary {
-    font-size: 2.25rem;
+    font-size: base.$fs-36;
     color: base.$clr-white;
     text-align: center;
     font-weight: 700;
+    line-height: 1.1;
+
+    @include utils.mQ(38.75rem) {
+        font-size: base.$fs-56;
+        line-height: 1.04;
+    }
+
+    @include utils.mQ(61.25rem) {
+        text-align: start;
+    }
 }
 
 .hero-content {
-    font-size: 0.9375rem;
+    font-size: base.$fs-15;
     color: base.$clr-white;
     opacity: 0.75;
     text-align: center;
     line-height: 1.6;
+    margin-block: 1rem;
+
+    @include utils.mQ(61.25rem) {
+        text-align: start;
+    }
 }

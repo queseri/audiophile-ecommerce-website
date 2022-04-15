@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "sass:color";
+@use "../utils";
 
 /* ----------------------------------- */
 /*          CUSTOM PROPERTIES          */
@@ -8,12 +9,22 @@
 /*-------------------------------------*/
 
 $clr-beige: hsl(22, 65%, 57%);
-$clr-almost-black: hsl(0, 0%, 6%);
+$clr-almost-black: hsla(0, 0%, 6% , 0.955);
 $clr-light-gray: hsl(0, 0%, 95%);
 $clr-very-light-gray: hsl(0, 0%, 98%);
 $clr-peach: hsl(21, 94%, 75%);
 $clr-black: hsl(0, 0%, 0%);
 $clr-white: hsl(0, 0%, 100%);
+
+/* ------------------------------------*/
+/*        FONT SIZES                   */
+/*-------------------------------------*/
+
+$fs-14: utils.calculateRem(14);
+$fs-15: utils.calculateRem(15);
+$fs-16: utils.calculateRem(16);
+$fs-36: utils.calculateRem(36);
+$fs-56: utils.calculateRem(56);
 
 .container {
     padding-block: 2rem;
