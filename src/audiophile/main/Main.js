@@ -9,7 +9,7 @@ function Main() {
             <div className='primary-nav'>
                 <ul className='primary-nav-list'>
                     <li className="primary-nav-list-item">
-                        <img class="primary-nav-image"
+                        <img className="primary-nav-image"
                             src={Headphones}
                             alt=""
                             aria-hidden="true" />
@@ -23,7 +23,7 @@ function Main() {
                     </li>
                     <li className="primary-nav-list-item">
 
-                        <img class="primary-nav-image"
+                        <img className="primary-nav-image"
                             src={Speakers} alt=""
                             aria-hidden="true" />
 
@@ -36,7 +36,7 @@ function Main() {
                     </li>
                     <li className='primary-nav-list-item'>
 
-                        <img class="primary-nav-image"
+                        <img className="primary-nav-image"
                             src={Earphones} alt=""
                             aria-hidden="true" />
 
