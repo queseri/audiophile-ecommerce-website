@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "chmod +x ./fix_crypto_dependency.sh; ./fix_crypto_dependency.sh",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
