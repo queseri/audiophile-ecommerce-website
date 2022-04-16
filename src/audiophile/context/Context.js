@@ -9,28 +9,29 @@ export const DataProvider = (props) => {
     const [error, setError] = useState(null)
     //  const app = new Realm.App({ id: "audiophile-unxuv" });
     // const credentials = Realm.Credentials.anonymous();
-    const fetchData = async () => {
-        setFetchStatus("loading")
-        const REALM_APP_ID = "audiophile-unxuv"
-        const app = new Realm.App({ id: REALM_APP_ID });
-        const credentials = Realm.Credentials.anonymous();
 
-        try {
-            const user = await app.logIn(credentials);
-            const allProducts = await user.functions.getAllProducts()
-            setProducts(await allProducts)
-            setFetchStatus("success")
-            console.log(allProducts)
-        } catch (err) {
-            setError(err)
-            setFetchStatus("error")
-            console.error(error);
-        }
-    }
-   
     useEffect(() => {
+        const fetchData = async () => {
+            setFetchStatus("loading")
+            const REALM_APP_ID = "audiophile-unxuv"
+            const app = new Realm.App({ id: REALM_APP_ID });
+            const credentials = Realm.Credentials.anonymous();
+
+            try {
+                const user = await app.logIn(credentials);
+                const allProducts = await user.functions.getAllProducts()
+                setProducts(await allProducts)
+                setFetchStatus("success")
+                console.log(allProducts)
+            } catch (err) {
+                setError(err)
+                setFetchStatus("error")
+                console.error(error);
+            }
+        }
+
         fetchData()
-        setFetchStatus("success")
+        // setFetchStatus("success")
     }, [])
 
 
