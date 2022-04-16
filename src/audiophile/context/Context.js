@@ -27,10 +27,12 @@ export const DataProvider = (props) => {
             console.error(error);
         }
     }
+   
     useEffect(() => {
         fetchData()
-       // setFetchStatus("success")
+        setFetchStatus("success")
     }, [])
+
 
     if (fetchStatus !== "success") {
         return <div>Loading</div>
