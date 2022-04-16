@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Hamburger from '../assets/shared/tablet/icon-hamburger.svg'
-import CartIcon from '../assets/shared/desktop/icon-cart.svg'
-import Logo from '../assets/shared/desktop/logo.svg'
+import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
+import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
+import Logo from '../../assets/shared/desktop/logo.svg'
 
 function Header() {
     const [menu, setMenu] = useState(false)
