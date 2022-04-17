@@ -26,7 +26,7 @@
 }
 
 .hero-content-container {
-    padding-block: 6rem;
+    padding-block: 6rem 6.2rem;
     padding-inline: 1.5rem;
     max-width: 23.6875rem;
     margin-inline: auto;
@@ -74,7 +74,7 @@
     opacity: 0.75;
     text-align: center;
     line-height: 1.6;
-    margin-block: 1rem;
+    margin-block: 2rem;
 
     @include utils.mQ(61.25rem) {
         text-align: start;

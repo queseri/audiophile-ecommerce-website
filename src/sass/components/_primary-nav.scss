@@ -4,25 +4,27 @@
 @use "../utils";
 
 .primary-nav-list {
-	padding: 2rem;
-	display: flex;
-	flex-direction: column;
-	gap: 6rem;
-	margin-block-start: 3rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-block-start: 3.8rem;
 }
 
 .primary-nav-list-item {
-	background-color: base.$clr-very-light-gray;
-	border-radius: 8px;
+    background-color: base.$clr-very-light-gray;
+    border-radius: 8px;
 }
 
 .primary-nav-image {
     position: relative;
-	width: 50%;
-	margin: auto;
-    top: -4rem;
+    width: 50%;
+    margin: auto;
+    top: -3rem;
 }
 
 .primary-nav-heading {
     text-align: center;
+	position: relative;
+    top: -4rem;
 }

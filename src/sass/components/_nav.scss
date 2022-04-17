@@ -6,6 +6,16 @@
 .nav {
     max-width: 69.375rem;
     margin-inline: auto;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: calc(100% - 3rem);
+        height: 1px;
+        bottom: 0;
+        background-color: base.$clr-very-light-gray;
+    }
 }
 
 .nav-list {
@@ -14,7 +24,7 @@
     left: 0;
     width: 100%;
     background-color: base.$clr-white;
-	display: none;
+    display: none;
 
     @include utils.mQ(61.25rem) {
         display: flex;
@@ -26,11 +36,22 @@
     }
 }
 
+.nav-list-item {
+    text-align: center;
+    padding-bottom: 3rem;
+
+    @include utils.mQ(61.25rem) {
+        padding-bottom: 0;
+    }
+}
+
 .nav-list-show {
-	display: block;
+    display: block;
+    padding: 2rem;
+
     @include utils.mQ(61.25rem) {
         display: flex;
-     }
+    }
 }
 
 .menu-ctrl {

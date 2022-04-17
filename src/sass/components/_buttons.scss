@@ -22,7 +22,7 @@
     background: base.$clr-beige;
     font-size: base.$fs-14;
     display: block;
-    margin: auto;
+    margin-inline: auto;
     max-width: 10rem;
     color: base.$clr-white;
     text-align: center;
@@ -41,9 +41,28 @@
 }
 
 .primary-nav-btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
-	text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    position: relative;
+top: -2rem;
+}
+
+.nav-list-item-btn,
+.logo-btn {
+    color: base.$clr-almost-black;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.15em;
+    }
+
+    @include utils.mQ(61.25rem) {       
+        color: base.$clr-white;    
+    }
 }

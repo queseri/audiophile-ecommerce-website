@@ -21,22 +21,30 @@ function Header() {
                         onClick={handleMenu}>
                         <img src={Hamburger} alt="" />
                     </button>
-                    <a className="btn-logo" href="./">
+                    <a className="logo-btn" href="./">
                         <img src={Logo} alt="" />
                     </a>
                 </div>
                 <ul className={`nav-list  ${menu ? "nav-list-show" : ""}`} role="menu">
                     <li className="nav-list-item">
-                        Home
+                        <a className='nav-list-item-btn' href='/'>
+                            Home
+                        </a>
                     </li>
                     <li className="nav-list-item">
-                        Headphones
+                        <a className='nav-list-item-btn' href='/'>
+                            Headphones
+                        </a>
                     </li>
                     <li className="nav-list-item">
-                        Speakers
+                        <a className='nav-list-item-btn' href='/'>
+                            Speakers
+                        </a>
                     </li>
                     <li className="nav-list-item">
-                        Earphones
+                        <a className='nav-list-item-btn' href='/'>
+                            Earphones
+                        </a>
                     </li>
                 </ul>
                 <div className="cart-container">
@@ -45,7 +53,7 @@ function Header() {
                     </button>
                 </div>
             </nav>
-            
+
             <div className="hero-container">
                 <div className="hero">
                     <div className="hero-content-container">
