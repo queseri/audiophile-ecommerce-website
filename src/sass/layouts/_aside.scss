@@ -1,0 +1,45 @@
+@use '../base';
+@use '../utils';
+
+.aside {
+    max-width: 69.375rem;
+    margin-inline: auto;
+
+    @include utils.mQ(61.25rem) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+    }
+}
+
+.aside-content-container,
+.aside-image-container {
+    @include utils.mQ(61.25rem) {
+        flex: 1 1 50%;
+    }
+}
+
+.aside-heading {
+    font-size: base.$fs-28;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include utils.mQ(61.25rem) {
+        font-size: base.$fs-40;
+        text-align: left;
+        letter-spacing: 1.43px;
+    }
+}
+
+.aside-content-text {
+    text-align: center;
+    font-size: base.$fs-15;
+    line-height: 1.7;
+
+    @include utils.mQ(61.25rem) {
+        text-align: left;
+        padding-right: 3rem;
+    }
+}

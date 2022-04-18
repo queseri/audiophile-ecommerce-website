@@ -25,6 +25,7 @@ $fs-15: utils.calculateRem(15);
 $fs-16: utils.calculateRem(16);
 $fs-28: utils.calculateRem(28);
 $fs-36: utils.calculateRem(36);
+$fs-40: utils.calculateRem(40);
 $fs-56: utils.calculateRem(56);
 
 .container {
@@ -38,6 +39,11 @@ $fs-56: utils.calculateRem(56);
 
 .border-radius {
     border-radius: 8px;
+}
+
+.text-orange {
+    color: $clr-beige;
+    letter-spacing: 1px;   
 }
 
 .flex {
