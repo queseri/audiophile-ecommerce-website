@@ -9,7 +9,7 @@
 /*-------------------------------------*/
 
 $clr-beige: hsl(22, 65%, 57%);
-$clr-almost-black: hsla(0, 0%, 6% , 0.955);
+$clr-almost-black: hsla(0, 0%, 6%, 0.955);
 $clr-light-gray: hsl(0, 0%, 95%);
 $clr-very-light-gray: hsl(0, 0%, 98%);
 $clr-peach: hsl(21, 94%, 75%);
@@ -29,6 +29,10 @@ $fs-56: utils.calculateRem(56);
 .container {
     padding-block: 2rem;
     padding-inline: 1.5rem;
+}
+
+.border-radius {
+    border-radius: 8px;
 }
 
 .flex {

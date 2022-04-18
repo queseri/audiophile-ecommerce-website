@@ -47,7 +47,7 @@
     gap: 1rem;
     text-decoration: none;
     position: relative;
-top: -2rem;
+    top: -1rem;
 }
 
 .nav-list-item-btn,
@@ -62,7 +62,25 @@ top: -2rem;
         outline-offset: 0.15em;
     }
 
-    @include utils.mQ(61.25rem) {       
-        color: base.$clr-white;    
+    @include utils.mQ(61.25rem) {
+        color: base.$clr-white;
     }
+}
+
+.btn-products {
+	display: block;
+	margin-inline: auto;
+	padding: .5rem 1rem;
+	border: none;
+	outline: none;
+	margin-block: 3rem;
+}
+
+.btn-bg-black {
+    background-color: base.$clr-almost-black;
+}
+.btn-bg-transparent {
+    background-color: inherit;
+    border: 1px solid base.$clr-almost-black;
+    color: base.$clr-almost-black;
 }

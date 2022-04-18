@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
 import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
 import Logo from '../../assets/shared/desktop/logo.svg'
+import ButtonView from '../components/ButtonView'
 
 function Header() {
     const [menu, setMenu] = useState(false)
@@ -63,9 +64,7 @@ function Header() {
                         <p className="hero-content">
                             Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
                         </p>
-                        <a href="/" className="btn-view-product">
-                            See product
-                        </a>
+                        <ButtonView />                        
                     </div>
                 </div>
             </div>

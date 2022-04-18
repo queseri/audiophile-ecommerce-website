@@ -24,7 +24,7 @@ export const DataProvider = (props) => {
                 const allProducts = await user.functions.getAllProducts()
                 setProducts(await allProducts)
                 setFetchStatus("success")
-                console.log(allProducts)
+              //  console.log(allProducts)
             } catch (err) {
                 setError(err)
                 setFetchStatus("error")

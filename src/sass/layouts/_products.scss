@@ -1,0 +1,64 @@
+@use '../base';
+@use '../utils';
+
+.product2-image,
+.product1 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: cover;
+}
+
+.products {
+    padding-block-start: 1rem;
+}
+
+.product2-image {
+    background-image: url("../../assets/home/mobile/image-speaker-zx7.jpg");
+    background-position: right center;
+}
+
+.product1 {
+    background-image: url("../../assets/home/desktop/pattern-circles.svg");
+    background-color: base.$clr-beige;
+    background-position: 50% 50%;
+    padding-block-end: 1rem;
+}
+
+.product2 {
+    position: relative;
+}
+
+.product2-content {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.inner-image {
+    height: 0;
+    display: block;
+    padding-block-start: 97.9%;
+}
+
+.product1-image-img {
+    margin-block: 2.2rem;
+    margin-inline: auto;
+    width: 50%;
+}
+
+.product-heading {
+    color: base.$clr-white;
+    text-align: center;
+    font-size: base.$fs-36;
+}
+
+.product-content {
+    color: base.$clr-white;
+    text-align: center;
+    font-size: base.$fs-14;
+}
+
+.product3-content-container {
+    background-color: base.$clr-light-gray;
+    color: base.$clr-almost-black;
+}

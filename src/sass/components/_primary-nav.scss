@@ -8,7 +8,12 @@
     display: flex;
     flex-direction: column;
     gap: 6rem;
-    margin-block-start: 3.8rem;
+    margin-block-start: 4.5rem;
+
+    @include utils.mQ(38.75rem) {
+        flex-direction: row;
+        gap: 1rem;
+    }
 }
 
 .primary-nav-list-item {
@@ -18,13 +23,14 @@
 
 .primary-nav-image {
     position: relative;
-    width: 50%;
+    width: 38%;
     margin: auto;
-    top: -3rem;
+    top: -2rem;
+	transform: scale(1.6);
 }
 
 .primary-nav-heading {
     text-align: center;
-	position: relative;
-    top: -4rem;
+    position: relative;
+    top: -2rem;
 }
