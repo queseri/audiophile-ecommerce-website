@@ -4,6 +4,7 @@
 .aside {
     max-width: 69.375rem;
     margin-inline: auto;
+    padding-block: 5rem;
 
     @include utils.mQ(61.25rem) {
         display: flex;
@@ -14,8 +15,13 @@
     }
 }
 
+.aside-content-container {
+	margin-block-start: 2rem;
+}
+
 .aside-content-container,
 .aside-image-container {
+   
     @include utils.mQ(61.25rem) {
         flex: 1 1 50%;
     }
@@ -25,6 +31,7 @@
     font-size: base.$fs-28;
     text-align: center;
     text-transform: uppercase;
+    margin-block-end: 2rem;
 
     @include utils.mQ(61.25rem) {
         font-size: base.$fs-40;

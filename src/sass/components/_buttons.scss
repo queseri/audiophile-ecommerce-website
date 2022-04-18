@@ -74,6 +74,10 @@
     }
 }
 
+.logo-btn {
+    color: base.$clr-white;
+}
+
 .btn-products {
     display: block;
     margin-inline: auto;
@@ -85,8 +89,9 @@
 
 .btn-bg-black {
     background-color: base.$clr-almost-black;
+
     @include utils.mQ(61.25rem) {
-     //   margin-inline: auto;
+        //   margin-inline: auto;
     }
 }
 
@@ -95,4 +100,15 @@
     border: 1px solid base.$clr-almost-black;
     color: base.$clr-almost-black;
     margin: 0;
+}
+
+.btn-social {
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.15em;
+    }
+
 }

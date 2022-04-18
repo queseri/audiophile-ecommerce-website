@@ -38,7 +38,7 @@
 
 .nav-list-item {
     text-align: center;
-    padding-bottom: 3rem;
+    padding-bottom: 1.2rem;
 
     @include utils.mQ(61.25rem) {
         padding-bottom: 0;

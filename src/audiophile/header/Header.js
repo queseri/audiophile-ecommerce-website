@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
 import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
-import Logo from '../../assets/shared/desktop/logo.svg'
 import ButtonView from '../components/ButtonView'
+import NavListBtn from '../components/NavListBtn'
+import Logo from '../components/Logo'
 
 function Header() {
     const [menu, setMenu] = useState(false)
@@ -22,32 +23,18 @@ function Header() {
                         onClick={handleMenu}>
                         <img src={Hamburger} alt="" />
                     </button>
-                    <a className="logo-btn" href="./">
-                        <img src={Logo} alt="" />
-                    </a>
+
+                   <Logo header={true}/>
+
                 </div>
+
                 <ul className={`nav-list  ${menu ? "nav-list-show" : ""}`} role="menu">
-                    <li className="nav-list-item">
-                        <a className='nav-list-item-btn' href='/'>
-                            Home
-                        </a>
-                    </li>
-                    <li className="nav-list-item">
-                        <a className='nav-list-item-btn' href='/'>
-                            Headphones
-                        </a>
-                    </li>
-                    <li className="nav-list-item">
-                        <a className='nav-list-item-btn' href='/'>
-                            Speakers
-                        </a>
-                    </li>
-                    <li className="nav-list-item">
-                        <a className='nav-list-item-btn' href='/'>
-                            Earphones
-                        </a>
-                    </li>
+                    <NavListBtn name="Home" />
+                    <NavListBtn name="Headphones" />
+                    <NavListBtn name="Speakers" />
+                    <NavListBtn name="Earphones" />
                 </ul>
+
                 <div className="cart-container">
                     <button className="btns btn-cart">
                         <img src={CartIcon} alt="" />
@@ -64,7 +51,7 @@ function Header() {
                         <p className="hero-content">
                             Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
                         </p>
-                        <ButtonView />                        
+                        <ButtonView />
                     </div>
                 </div>
             </div>
