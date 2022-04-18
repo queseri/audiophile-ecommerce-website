@@ -70,27 +70,36 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### Finding the aspect ratio for a background image
 
-To see how you can add code snippets, see below:
+given an image that is to be used as a background image where the height and width of the container is not specified.  The background image will not show up , unless or until the width(which can be specified by `width: 100%` ) and height are given. Setting the height is a bit tricky as using `height: 100% ` does not work. We need to find the aspect ratio for the image to be displayed properly. Read more on here - [Background image - aspect ration](https://www.smashingmagazine.com/2013/07/simple-responsive-images-with-css-background-images/) Solution:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+1. ```html
+<div class="main-container">
+    <div class="bg-img-container">
+        <div class="inner-container">
+
+        </div>
+    </div>
+</div>```
+
+2. ```css
+.bg-img-container {
+  background-image: url("../addresshere");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+.inner-container {
+     display: block;
+     height: 0;
+     padding-top: (height-of-img / width-of-height * 100)%;
+}``` 
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+#### Useeffect 
+[A complete guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
+
 
 ### Continued development
 

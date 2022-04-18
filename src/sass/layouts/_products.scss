@@ -10,55 +10,168 @@
 
 .products {
     padding-block-start: 1rem;
+    margin-block-end: .5rem;
+}
+
+.product1-content-container {
+    max-width: 21.875rem;
+    margin-inline: auto;
+    @include utils.mQ(61.25rem) {
+        flex: 1 1 50%;
+        max-width: 40%;
+    }
 }
 
 .product2-image {
     background-image: url("../../assets/home/mobile/image-speaker-zx7.jpg");
     background-position: right center;
+
+    @include utils.mQ(38.75rem) {
+        background-image: url("../../assets/home/tablet/image-speaker-zx7.jpg");
+    }
+
+    @include utils.mQ(61.25rem) {
+        background-image: url("../../assets/home/desktop/image-speaker-zx7.jpg");
+    }
 }
 
 .product1 {
     background-image: url("../../assets/home/desktop/pattern-circles.svg");
     background-color: base.$clr-beige;
-    background-position: 50% 50%;
-    padding-block-end: 1rem;
+    background-position: top center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block-end: 3.4375rem;
+
+    @include utils.mQ(61.25rem) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-block-end: 0;
+    }
 }
 
 .product2 {
     position: relative;
 }
 
+.product3 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include utils.mQ(38.75rem) {
+        flex-direction: row;
+    }
+}
+
 .product2-content {
     position: absolute;
-    top: 40%;
-    left: 10%;
+    top: 35%;
+    left: 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .inner-image {
     height: 0;
     display: block;
     padding-block-start: 97.9%;
+
+    @include utils.mQ(38.75rem) {
+        padding-block-start: 46%;
+    }
+
+    @include utils.mQ(61.25rem) {
+        padding-block-start: 29%;
+    }
+
+}
+
+.product1-image {
+    @include utils.mQ(61.25rem) {
+        flex: 1 1 50%;
+    }
 }
 
 .product1-image-img {
-    margin-block: 2.2rem;
+    margin-block: 2.5rem;
     margin-inline: auto;
     width: 50%;
+
+    @include utils.mQ(38.75rem) {
+        width: 27%;
+    }
+
+    @include utils.mQ(61.25rem) {
+        width: 65%;
+        margin-block-end: 0;
+    }
 }
 
 .product-heading {
     color: base.$clr-white;
     text-align: center;
     font-size: base.$fs-36;
+    text-transform: uppercase;
+    letter-spacing: 1.29px;
+    line-height: 1.1;
+    max-width: 20rem;
+
+    @include utils.mQ(38.75rem) {
+        font-size: base.$fs-56;
+    }
+
+    @include utils.mQ(61.25rem) {
+        text-align: left;
+        padding-inline: 0;
+    }
+}
+
+.product2-heading,
+.product3-heading {
+    font-size: base.$fs-28;
+    letter-spacing: 2px;
+    color: base.$clr-almost-black;
 }
 
 .product-content {
     color: base.$clr-white;
     text-align: center;
     font-size: base.$fs-14;
+    line-height: 1.7;
+    padding-block: 1.6rem;
+    max-width: 20rem;
+
+    @include utils.mQ(61.25rem) {
+        text-align: left;
+        padding-inline: 0;
+    }
 }
 
 .product3-content-container {
     background-color: base.$clr-light-gray;
-    color: base.$clr-almost-black;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .product-heading {
+        color: base.$clr-almost-black;
+        text-align: left;
+    }
+
+    @include utils.mQ(38.75rem) {
+        flex: 1 1 50%;
+        justify-content: center;
+    }
+}
+
+.product3-image-container {
+    @include utils.mQ(38.75rem) {
+        flex: 1 1 50%;
+    }
 }

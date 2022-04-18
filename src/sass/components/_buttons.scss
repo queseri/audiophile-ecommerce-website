@@ -29,6 +29,13 @@
     text-decoration: none;
     text-transform: uppercase;
 
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.15em;
+    }
+
     @include utils.mQ(61.25rem) {
         margin-inline-start: 0;
     }
@@ -68,19 +75,24 @@
 }
 
 .btn-products {
-	display: block;
-	margin-inline: auto;
-	padding: .5rem 1rem;
-	border: none;
-	outline: none;
-	margin-block: 3rem;
+    display: block;
+    margin-inline: auto;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    margin-block: 3rem;
 }
 
 .btn-bg-black {
     background-color: base.$clr-almost-black;
+    @include utils.mQ(61.25rem) {
+     //   margin-inline: auto;
+    }
 }
+
 .btn-bg-transparent {
     background-color: inherit;
     border: 1px solid base.$clr-almost-black;
     color: base.$clr-almost-black;
+    margin: 0;
 }
