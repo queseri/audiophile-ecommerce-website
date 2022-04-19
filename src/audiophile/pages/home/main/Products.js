@@ -1,13 +1,13 @@
 import React from 'react'
-import ButtonView from '../components/ButtonView'
+import ButtonView from '../../../components/ButtonView'
 
-import MobileZx9 from '../../assets/home/mobile/image-speaker-zx9.png'
-import TabletZx9 from '../../assets/home/tablet/image-speaker-zx9.png'
-import DesktopZx9 from '../../assets/home/desktop/image-speaker-zx9.png'
+import MobileZx9 from '../../../../assets/home/mobile/image-speaker-zx9.png'
+import TabletZx9 from '../../../../assets/home/tablet/image-speaker-zx9.png'
+import DesktopZx9 from '../../../../assets/home/desktop/image-speaker-zx9.png'
 
-import DesktopYx1 from '../../assets/home/desktop/image-earphones-yx1.jpg'
-import TabletYx1 from '../../assets/home/tablet/image-earphones-yx1.jpg'
-import MobileYx1 from '../../assets/home/mobile/image-earphones-yx1.jpg'
+import DesktopYx1 from '../../../../assets/home/desktop/image-earphones-yx1.jpg'
+import TabletYx1 from '../../../../assets/home/tablet/image-earphones-yx1.jpg'
+import MobileYx1 from '../../../../assets/home/mobile/image-earphones-yx1.jpg'
 
 function Products(props) {
     // {idx === 0 ? <p>Upgrade to premium speakers that are phenomenally built to

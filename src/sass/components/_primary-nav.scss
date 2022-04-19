@@ -19,6 +19,10 @@
 .primary-nav-list-item {
     background-color: base.$clr-very-light-gray;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .primary-nav-image {
@@ -26,7 +30,7 @@
     width: 38%;
     margin: auto;
     top: -2rem;
-	transform: scale(1.6);
+    transform: scale(1.6);
 }
 
 .primary-nav-heading {

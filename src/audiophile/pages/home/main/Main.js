@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
 import PrimaryNav from './PrimaryNav'
 import Products from './Products'
+import Hero from '../../../header/Hero'
 
 // Primary list
-import Headphones from '../../assets/shared/desktop/image-category-thumbnail-headphones.png'
-import Speakers from '../../assets/shared/desktop/image-category-thumbnail-speakers.png'
-import Earphones from '../../assets/shared/desktop/image-category-thumbnail-earphones.png'
 
-import Forward from '../../assets/shared/desktop/icon-arrow-right.svg'
-import { DataContext } from '../context/Context'
+import Headphones from '../../../../assets/shared/desktop/image-category-thumbnail-headphones.png'
+import Speakers from '../../../../assets/shared/desktop/image-category-thumbnail-speakers.png'
+import Earphones from '../../../../assets/shared/desktop/image-category-thumbnail-earphones.png'
+
+import Forward from '../../../../assets/shared/desktop/icon-arrow-right.svg'
+import { DataContext } from '../../../context/Context'
 
 function Main() {
     const data = useContext(DataContext)
@@ -18,7 +20,7 @@ function Main() {
     console.log(SortFilterPrimaryNav)
     return (
         <main className='main'>
-            
+                        
             <div className='primary-nav'>
                 <ul className='primary-nav-list'>
                     <PrimaryNav src={Headphones} forward={Forward} title="Headphones" text=" for headphones here" />

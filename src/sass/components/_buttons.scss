@@ -55,6 +55,15 @@
     text-decoration: none;
     position: relative;
     top: -1rem;
+    outline: none;
+    border: none;
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.35em;
+    }
 }
 
 .nav-list-item-btn,

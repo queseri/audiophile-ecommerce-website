@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function NavListBtn(props) {
     return (
         <li className="nav-list-item">
-            <a className='nav-list-item-btn' href='/'>
+            <Link to={`${props.address}`} className='nav-list-item-btn'>
                 {props.name}
-            </a>
+            </Link>
         </li>
     )
 }

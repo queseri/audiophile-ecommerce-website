@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
 import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
-import ButtonView from '../components/ButtonView'
+//import ButtonView from '../components/ButtonView'
 import NavListBtn from '../components/NavListBtn'
 import Logo from '../components/Logo'
+import Hero from './Hero'
 
 function Header() {
     const [menu, setMenu] = useState(false)
@@ -24,15 +25,15 @@ function Header() {
                         <img src={Hamburger} alt="" />
                     </button>
 
-                   <Logo header={true}/>
+                    <Logo header={true} />
 
                 </div>
 
                 <ul className={`nav-list  ${menu ? "nav-list-show" : ""}`} role="menu">
-                    <NavListBtn name="Home" />
-                    <NavListBtn name="Headphones" />
-                    <NavListBtn name="Speakers" />
-                    <NavListBtn name="Earphones" />
+                    <NavListBtn address="/" name="Home" />
+                    <NavListBtn address="./headphones" name="Headphones" />
+                    <NavListBtn address="./speakers" name="Speakers" />
+                    <NavListBtn address="./earphones" name="Earphones" />
                 </ul>
 
                 <div className="cart-container">
@@ -42,19 +43,7 @@ function Header() {
                 </div>
             </nav>
 
-            <div className="hero-container">
-                <div className="hero">
-                    <div className="hero-content-container">
-                        <h1 className="sr-only">Audiophile entertainment products</h1>
-                        <h2 className="hero-title">New product</h2>
-                        <h3 className="hero-title-secondary"> XX99 Mark II Headphones </h3>
-                        <p className="hero-content">
-                            Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
-                        </p>
-                        <ButtonView />
-                    </div>
-                </div>
-            </div>
+            <Hero />
         </header>
     )
 }
