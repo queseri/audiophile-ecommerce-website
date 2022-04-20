@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
 import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
-//import ButtonView from '../components/ButtonView'
-import NavListBtn from '../components/NavListBtn'
-import Logo from '../components/Logo'
+import NavListBtn from './NavListBtn'
+import Logo from './Logo'
 
 function Navigation() {
     const [menu, setMenu] = useState(false)

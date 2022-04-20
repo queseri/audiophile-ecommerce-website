@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonView from '../../../components/ButtonView'
+import ButtonView from '../../../shared/ButtonView'
 
 import MobileZx9 from '../../../../assets/home/mobile/image-speaker-zx9.png'
 import TabletZx9 from '../../../../assets/home/tablet/image-speaker-zx9.png'

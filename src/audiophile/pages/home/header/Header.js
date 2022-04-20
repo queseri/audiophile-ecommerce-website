@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Hero from './Hero'
 
-function Header() {
-   
+function Header() {   
 
     return (
         <>            

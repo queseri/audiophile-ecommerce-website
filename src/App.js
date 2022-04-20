@@ -1,11 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 //import { Link } from 'react-router-dom'
 //import { Routes, Route, useLocation } from 'react-router-dom'
-//import Header from "./audiophile/header/Header";
-import Navigation from './audiophile/header/Navigation';
-//import Main from "./audiophile/main/Main";
-//import Aside from "./audiophile/main/Aside";
-import Footer from "./audiophile/footer/Footer";
+
+import Navigation from './audiophile/shared/Navigation';
+//import Footer from "./audiophile/shared/Footer";
+import Footer from './audiophile/shared/Footer';
 import Home from "./audiophile/pages/home/Home";
 import Headphones from './audiophile/pages/headphones/Headphones';
 import Earphones from './audiophile/pages/earphones/Earphones';

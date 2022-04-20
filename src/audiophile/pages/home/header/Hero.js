@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonView from '../components/ButtonView'
+import ButtonView from '../../../shared/ButtonView'
 
 function Hero() {
   return (
