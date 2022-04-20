@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react'
 import * as Realm from 'realm-web'
+//import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import { Watch } from 'react-loader-spinner'
 
 export const DataContext = createContext()
 
@@ -7,8 +9,6 @@ export const DataProvider = (props) => {
     const [fetchStatus, setFetchStatus] = useState("idle")
     const [products, setProducts] = useState([])
     const [error, setError] = useState(null)
-    //  const app = new Realm.App({ id: "audiophile-unxuv" });
-    // const credentials = Realm.Credentials.anonymous();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,7 +24,7 @@ export const DataProvider = (props) => {
                 const allProducts = await user.functions.getAllProducts()
                 setProducts(await allProducts)
                 setFetchStatus("success")
-              //  console.log(allProducts)
+
             } catch (err) {
                 setError(err)
                 setFetchStatus("error")
@@ -33,11 +33,13 @@ export const DataProvider = (props) => {
         }
 
         fetchData()
-        // setFetchStatus("success")
-    }, [error]) 
-   
+
+    }, [error])
+
     if (fetchStatus !== "success") {
-        return <div>Loading</div>
+        return <div className='loading-flex'>
+            <Watch color="#00BFFF" height={200} width={200} />
+        </div>
     }
     return (
         <DataContext.Provider value={{ products }}>
