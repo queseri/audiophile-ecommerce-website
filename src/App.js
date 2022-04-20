@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 //import { Link } from 'react-router-dom'
 //import { Routes, Route, useLocation } from 'react-router-dom'
-import Header from "./audiophile/header/Header";
+//import Header from "./audiophile/header/Header";
+import Navigation from './audiophile/header/Navigation';
 //import Main from "./audiophile/main/Main";
 //import Aside from "./audiophile/main/Aside";
 import Footer from "./audiophile/footer/Footer";
@@ -15,7 +16,8 @@ function App() {
   return (
     <DataProvider>
       <div className="App">
-        <Header />
+        <Navigation />
+        
 
         <Routes>
           <Route path="/" element={<Home />} />

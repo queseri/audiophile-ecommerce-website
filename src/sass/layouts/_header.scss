@@ -1,9 +1,10 @@
 @use '../base';
 @use '../utils';
 
-.header {
-    background-color: base.$clr-almost-black;   
-    @include utils.mQ(61.25rem) {
+.main-navigation {
+    background-color: base.$clr-almost-black;
+}
 
-    }
+.header {
+    background-color: base.$clr-almost-black;
 }
