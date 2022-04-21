@@ -1,11 +1,12 @@
 import React from 'react'
 import Aside from '../../shared/Aside'
 import MainHeadPhones from './main/MainHeadPhones'
+import HeaderHeadPhones from './header/HeaderHeadPhones'
 
 function Headphones() {
   return (
     <>
-      <h1>Headphone</h1>
+      <HeaderHeadPhones />
       <MainHeadPhones />
       <Aside />
     </>

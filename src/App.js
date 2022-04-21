@@ -25,10 +25,6 @@ function App() {
           <Route path="earphones" element={<Earphones />}/>
         </Routes>
 
-        {/*
-        <Main />
-        <Aside />
-   */}
         <Footer />
       </div>
     </DataProvider>

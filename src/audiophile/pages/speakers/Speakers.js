@@ -1,11 +1,12 @@
 import React from 'react'
 import Aside from '../../shared/Aside'
 import MainSpeakers from './main/MainSpeakers'
+import HeaderSpeakers from './header/HeaderSpeakers'
 
 function Speakers() {
   return (
     <>
-      <h1>Speakers</h1>
+      <HeaderSpeakers />
       <MainSpeakers />
       <Aside />
     </>
