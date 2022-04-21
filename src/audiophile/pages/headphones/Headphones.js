@@ -1,8 +1,14 @@
 import React from 'react'
+import Aside from '../../shared/Aside'
+import MainHeadPhones from './main/MainHeadPhones'
 
 function Headphones() {
   return (
-    <div>Headphones</div>
+    <>
+      <h1>Headphone</h1>
+      <MainHeadPhones />
+      <Aside />
+    </>
   )
 }
 
