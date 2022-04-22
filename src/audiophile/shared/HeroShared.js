@@ -4,11 +4,17 @@ import React from 'react'
 function HeroShared(props) {
     return (
         <div className="hero-container">
-            <div className="hero">
-                <div className="hero-content-container">
-                    <h1 className="sr-only">Audiophile entertainment products</h1>
-                    <h2 className="hero-title sr-only">New product</h2>
-                    <h3 className="hero-title-secondary">{props.title}</h3>                  
+            <div className="hero-shared">
+                <div className="hero-content-container-shared">
+                    <h1 className="hero-title-secondary">
+                        <span className="sr-only">
+                            Audiophile entertainment products
+                        </span>
+                        {props.title}
+                        <span className="sr-only">
+                            Section
+                        </span>
+                    </h1>
                 </div>
             </div>
         </div>

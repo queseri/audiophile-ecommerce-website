@@ -1,0 +1,39 @@
+@use "sass:math";
+@use "sass:color";
+@use "../base";
+@use "../utils";
+
+.product-title {
+    font-size: base.$fs-14;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    font-weight: 400;
+    margin-block: 1rem;
+}
+
+.product-title-secondary {
+    font-size: base.$fs-28;
+    color: base.$clr-almost-black;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.shared-product-text {
+    font-size: base.$fs-15;
+    color: base.$clr-almost-black;
+    line-height: 1.7;
+    opacity: 0.9;
+    text-align: center;
+    padding-block: 1.25rem;
+}
+
+.shared-products-image-container {
+    margin-block-start: 2rem;
+}
+
+.shared-products-content {
+    margin-block: 2rem;
+}

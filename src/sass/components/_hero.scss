@@ -3,8 +3,7 @@
 @use "../base";
 @use "../utils";
 
-.hero {
-    //  background-color: black;
+.hero {    
     background-image: url('../../assets/home/mobile/image-header.jpg');
     background-position: 100% 100%;
     background-repeat: no-repeat;
@@ -18,6 +17,13 @@
     @include utils.mQ(61.25rem) {
         background-size: contain;
     }
+}
+
+.hero-content-container-shared {   
+        padding-block: 2rem;
+        padding-inline: 1.5rem;
+        max-width: 23.6875rem;
+        margin-inline: auto;
 }
 
 .hero-container {

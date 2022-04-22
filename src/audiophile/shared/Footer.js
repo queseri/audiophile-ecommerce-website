@@ -13,11 +13,11 @@ function Footer() {
                     <Logo />
                 </div>
 
-                <ul className={`footer-nav`} role="menu">
-                    <NavListBtn name="Home" />
-                    <NavListBtn name="Headphones" />
-                    <NavListBtn name="Speakers" />
-                    <NavListBtn name="Earphones" />
+                <ul className={`footer-nav`} role="menu">                    
+                    <NavListBtn address="/" name="Home" />
+                    <NavListBtn address="./headphones" name="Headphones" />
+                    <NavListBtn address="./speakers" name="Speakers" />
+                    <NavListBtn address="./earphones" name="Earphones" />
                 </ul>
 
                 <p className='footer-text'>
