@@ -20,10 +20,14 @@
 }
 
 .hero-content-container-shared {   
-        padding-block: 2rem;
+        padding-block: 2.25rem;
         padding-inline: 1.5rem;
         max-width: 23.6875rem;
         margin-inline: auto;
+
+        @include utils.mQ(38.75rem) {
+            padding-block: 6rem;
+        }
 }
 
 .hero-container {
@@ -61,6 +65,7 @@
     font-size: base.$fs-36;
     color: base.$clr-white;
     text-align: center;
+    text-transform: uppercase;
     font-weight: 700;
     line-height: 1.1;
 
@@ -71,6 +76,14 @@
 
     @include utils.mQ(61.25rem) {
         text-align: start;
+    }
+}
+
+.hero-title-secondary-shared {
+    font-size: base.$fs-28;
+    letter-spacing: 2px;
+    @include utils.mQ(38.75rem) {
+        font-size: base.$fs-40;       
     }
 }
 

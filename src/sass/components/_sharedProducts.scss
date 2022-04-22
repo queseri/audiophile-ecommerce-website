@@ -10,6 +10,11 @@
     text-align: center;
     font-weight: 400;
     margin-block: 1rem;
+
+    @include utils.mQ(61.25rem) {
+        text-align: left;
+    }
+
 }
 
 .product-title-secondary {
@@ -19,6 +24,28 @@
     text-align: center;
     font-weight: 700;
     line-height: 1.2;
+
+    @include utils.mQ(38.75rem) {
+        font-size: base.$fs-40;
+        letter-spacing: 1.43px;
+    }
+
+    @include utils.mQ(61.25rem) {
+        text-align: left;
+    }
+}
+
+.shared-products {
+
+    @include utils.mQ(61.25rem) {
+        display: flex;
+        justify-content: space-around;
+        gap: 2.5rem;
+
+        &:nth-child(2) {
+            flex-direction: row-reverse;
+        }
+    }
 }
 
 .shared-product-text {
@@ -28,12 +55,26 @@
     opacity: 0.9;
     text-align: center;
     padding-block: 1.25rem;
+
+    @include utils.mQ(61.25rem) {
+        text-align: left;
+    }
 }
 
 .shared-products-image-container {
     margin-block-start: 2rem;
+
+    @include utils.mQ(61.25rem) {
+        flex: 1 1 50%;
+    }
 }
 
 .shared-products-content {
     margin-block: 2rem;
+    max-width: 34rem;
+    margin-inline: auto;
+
+    @include utils.mQ(61.25rem) {
+        flex: 1 1 50%;
+    }
 }

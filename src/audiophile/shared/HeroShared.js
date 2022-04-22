@@ -6,7 +6,7 @@ function HeroShared(props) {
         <div className="hero-container">
             <div className="hero-shared">
                 <div className="hero-content-container-shared">
-                    <h1 className="hero-title-secondary">
+                    <h1 className="hero-title-secondary hero-title-secondary-shared">
                         <span className="sr-only">
                             Audiophile entertainment products
                         </span>

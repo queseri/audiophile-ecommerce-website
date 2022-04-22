@@ -31,6 +31,9 @@ $fs-56: utils.calculateRem(56);
 .container {
     padding-block: 2rem;
     padding-inline: 1.5rem;
+    @include utils.mQ(38.75rem) {
+       padding-inline: 2.5rem;
+    }
 }
 
 .padding-inline {
