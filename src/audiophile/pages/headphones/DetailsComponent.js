@@ -41,29 +41,37 @@ function DetailsComponent() {
         description={getProduct.description}
         address={getProduct.id}
         hide={true}
+        details={true}
       />
 
-      <div className='add-to-cart'>
-        <p>{getProduct.price}</p>
-        <div className='quantity-control'>
-          <button className='btn minus'>-</button>
-          <span className='quantity'>0</span>
-          <button className="btn add">+</button>
+      <div className='add-to-cart container'>
+        <p className='product-cost'>
+          {new Intl.NumberFormat('en-US',
+            { style: 'currency', currency: 'USD' }).format(getProduct.price)}
+        </p>
+
+        <div className='cart-divider'>
+          <div className='quantity-control'>
+            <button className='btn btn-cart btn- minus'>-</button>
+            <span className='quantity'>0</span>
+            <button className="btn btn-cart add">+</button>
+          </div>
+          <button className='btns btn-add-to-cart'>Add to cart</button>
         </div>
-        <button className='btn btn-add-to-cart'>Add to cart</button>
+
       </div>
 
-      <div className='features'>
+      <div className='features container'>
         <h3 className='features-title'>Features</h3>
         {features.map((feature, idx) => <p key={idx}
           className={`features-content feature-content${idx}`}>{feature}</p>)}
       </div>
 
-      <div className='extras'>
+      <div className='extras container'>
         <h4 className='extra-title'>In the box</h4>
         <ul className='extras-list'>
-          {getProduct.includes.map(item => <li key={item.item}>
-            <span className='item-quantity'>{item.quantity}x</span>
+          {getProduct.includes.map(item => <li key={item.item} className='extra-list-item'>
+            <span className='item-quantity text-orange'>{item.quantity}x</span>
             <span className='item-description'>{item.item}</span>
           </li>)}
         </ul>
@@ -71,21 +79,21 @@ function DetailsComponent() {
 
       <div className='decorative'>
         <ul className='decorative-image-list'>
-          <li className='decorative-image-list-item'>
+          <li className='decorative-image-list-item decorative-image-list-item1 container'>
             <DecorativeImages
               desktop={`../.${decoratives.first.desktop}`}
               tablet={`../.${decoratives.first.tablet}`}
               mobile={`../.${decoratives.first.mobile}`}
             />
           </li>
-          <li className='decorative-image-list-item'>
+          <li className='decorative-image-list-item decorative-image-list-item2  container'>
             <DecorativeImages
               desktop={`../.${decoratives.second.desktop}`}
               tablet={`../.${decoratives.second.tablet}`}
               mobile={`../.${decoratives.second.mobile}`}
             />
           </li>
-          <li className='decorative-image-list-item'>
+          <li className='decorative-image-list-item decorative-image-list-item3 container'>
             <DecorativeImages
               desktop={`../.${decoratives.third.desktop}`}
               tablet={`../.${decoratives.third.tablet}`}
@@ -95,12 +103,13 @@ function DetailsComponent() {
         </ul>
       </div>
 
-      <div className='other-products'>
+      <div className='other-products container'>
         <h3 className='other-products-title'>
           You may also like
         </h3>
         <ul className='other-products-list'>
-          {otherProducts.map(product => <li key={product.slug} className='other-product-list-item'>
+          {otherProducts.map((product, idx) => <li key={product.slug}
+            className={`other-product-list-item other-product-list-item${idx}`}>
             <DecorativeImages
               desktop={`../.${product.image.desktop}`}
               tablet={`../.${product.image.tablet}`}

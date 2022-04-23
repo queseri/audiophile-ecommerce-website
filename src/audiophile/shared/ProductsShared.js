@@ -3,8 +3,9 @@ import ButtonView from './ButtonView'
 import DecorativeImages from './DecorativeImages'
 
 function ProductsShared(props) {
+    const details = props.details ? "product-detail" : ""
     return (
-        <div className='shared-products container'>
+        <div className={`shared-products container ${details}`}>
             <div className='shared-products-image-container border-radius'>   
             <DecorativeImages desktop={props.desktop} tablet={props.tablet} mobile={props.mobile}  />  
          

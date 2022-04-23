@@ -8,7 +8,7 @@
 /*        MAIN-ACCENT COLOURS          */
 /*-------------------------------------*/
 
-$clr-beige: hsl(22, 65%, 57%);
+$clr-orange: hsl(22, 65%, 57%);
 $clr-almost-black: hsla(0, 0%, 6%, 0.955);
 $clr-light-gray: hsl(0, 0%, 95%);
 $clr-very-light-gray: hsl(0, 0%, 98%);
@@ -23,6 +23,8 @@ $clr-white: hsl(0, 0%, 100%);
 $fs-14: utils.calculateRem(14);
 $fs-15: utils.calculateRem(15);
 $fs-16: utils.calculateRem(16);
+$fs-18: utils.calculateRem(18);
+$fs-24: utils.calculateRem(24);
 $fs-28: utils.calculateRem(28);
 $fs-36: utils.calculateRem(36);
 $fs-40: utils.calculateRem(40);
@@ -31,8 +33,9 @@ $fs-56: utils.calculateRem(56);
 .container {
     padding-block: 2rem;
     padding-inline: 1.5rem;
+
     @include utils.mQ(38.75rem) {
-       padding-inline: 2.5rem;
+        padding-inline: 2.5rem;
     }
 }
 
@@ -46,8 +49,12 @@ $fs-56: utils.calculateRem(56);
 }
 
 .text-orange {
-    color: $clr-beige;
-    letter-spacing: 1px;   
+    color: $clr-orange;
+    letter-spacing: 1px;
+}
+
+.bg-orange {
+    background-color: $clr-orange;
 }
 
 .flex {

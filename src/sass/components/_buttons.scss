@@ -17,9 +17,10 @@
     }
 }
 
-.btn-view-product {
+.btn-view-product,
+.btn-add-to-cart {
     padding: .8rem 1rem;
-    background: base.$clr-beige;
+    background: base.$clr-orange;
     font-size: base.$fs-14;
     display: block;
     margin-inline: auto;
@@ -120,6 +121,33 @@
         outline-offset: 0.15em;
     }
 
+}
+
+.btn-cart {
+    border: none;
+    background-color: inherit;
+    outline: none;
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.15em;
+    }
+}
+
+
+.btn-add-to-cart {
+    flex: 1 1 60%;
+    background-color: base.$clr-orange;
+    color: base.$clr-white;
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        outline: dashed base.$clr-orange;
+        outline-offset: 0.15em;
+    }
 }
 
 .hide {

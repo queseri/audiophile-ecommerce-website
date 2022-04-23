@@ -8,16 +8,85 @@
 }
 
 .btn-return {
-	top: 2rem;
-	display: inline-block;
-	position: relative;
+    top: 2rem;
+    display: inline-block;
+    position: relative;
     text-decoration: none;
     color: base.$clr-almost-black;
 
     &:focus,
-    &:hover {        
+    &:hover {
         cursor: pointer;
         outline: dashed currentColor;
         outline-offset: 0.25em;
+    }
+}
+
+.product-detail {
+
+    .product-title,
+    .product-title-secondary,
+    .shared-product-text {
+        text-align: left;
+    }
+}
+
+
+.add-to-cart {
+    padding-block: 0;
+}
+
+.product-cost {
+    font-size: base.$fs-18;
+    font-weight: 700;
+    letter-spacing: 1.29px;
+}
+
+.cart-divider {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.quantity-control {
+    background-color: base.$clr-light-gray;
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.features-title,
+.extra-title,
+.other-products-title,
+.other-product-item-title {
+    font-size: base.$fs-24;
+    line-height: 1.5;
+    letter-spacing: 0.86px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.features-content {
+    padding-top: 1rem;
+    font-size: base.$fs-15;
+    line-height: 1.7;
+}
+
+.extra-list-item {
+    display: flex;
+    gap: 2rem;
+}
+
+.other-products-list {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.decorative-image-list {
+    @include utils.mQ(38.75rem) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
