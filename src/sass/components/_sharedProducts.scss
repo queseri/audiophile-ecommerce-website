@@ -71,10 +71,13 @@
 
 .shared-products-content {
     margin-block: 2rem;
-    max-width: 34rem;
+    max-width: 35rem;
     margin-inline: auto;
 
     @include utils.mQ(61.25rem) {
         flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }

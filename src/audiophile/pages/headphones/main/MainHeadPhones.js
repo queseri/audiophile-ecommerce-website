@@ -19,7 +19,8 @@ function MainHeadPhones() {
                     mobile={product.categoryImage.mobile}
                     name={product.name}
                     description={product.description}
-                />)}
+                    address={product.id}
+                />)}                
             </div>
             <MainPrimaryNavs />
         </div>

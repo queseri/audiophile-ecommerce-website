@@ -15,7 +15,7 @@ function ProductsShared(props) {
                     <h2 className='product-title text-orange'>New product</h2>
                     <h3 className='product-title-secondary'>{props.name}</h3>
                     <p className='shared-product-text'>{props.description}</p>
-                    <ButtonView name={props.name} />
+                    <ButtonView name={props.name} address={props.address} hide={props.hide} />
             </div>
         </div>
     )

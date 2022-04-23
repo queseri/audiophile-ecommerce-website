@@ -9,6 +9,7 @@ function Headphones() {
       <HeaderHeadPhones />
       <MainHeadPhones />
       <Aside />
+     
     </>
   )
 }
