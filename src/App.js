@@ -8,7 +8,7 @@ import Home from "./audiophile/pages/home/Home";
 import Headphones from './audiophile/pages/headphones/Headphones';
 import Earphones from './audiophile/pages/earphones/Earphones';
 import Speakers from './audiophile/pages/speakers/Speakers';
-import Mark2 from './audiophile/pages/headphones/Mark2';
+import DetailsComponent from './audiophile/pages/headphones/DetailsComponent';
 import { DataProvider } from "./audiophile/context/Context";
 //import Mark1 from './audiophile/pages/headphones/Mark1';
 
@@ -19,14 +19,15 @@ function App() {
         <Navigation />
         <Outlet />
         <>
-          <Routes>
-            
-            <Route path="headphones/:id" element={<Mark2 />} />
-
-            <Route exact path="/" element={<Home />} />
+          <Routes>            
+            <Route path="headphones/:id" element={<DetailsComponent />} />
             <Route path="headphones" element={<Headphones />} />
-            <Route path="speakers" element={<Speakers />} />
+            <Route path="earphones/:id" element={<DetailsComponent />} />
             <Route path="earphones" element={<Earphones />} />
+            <Route path="speakers/:id" element={<DetailsComponent />} />
+            <Route path="speakers" element={<Speakers />} />
+            <Route exact path="/" element={<Home />} />   
+           
           </Routes>
         </>
         <Footer />

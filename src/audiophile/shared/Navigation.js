@@ -26,10 +26,10 @@ function Navigation() {
                 </div>
 
                 <ul className={`nav-list  ${menu ? "nav-list-show" : ""}`} role="menu">
-                    <NavListBtn address="/" name="Home" />
-                    <NavListBtn address="./headphones" name="Headphones" />
-                    <NavListBtn address="./speakers" name="Speakers" />
-                    <NavListBtn address="./earphones" name="Earphones" />
+                    <NavListBtn address="/" name="Home" onclick={handleMenu} />
+                    <NavListBtn address="./headphones" name="Headphones" onclick={handleMenu} />
+                    <NavListBtn address="./speakers" name="Speakers" onclick={handleMenu} />
+                    <NavListBtn address="./earphones" name="Earphones" onclick={handleMenu}/>
                 </ul>
 
                 <div className="cart-container">

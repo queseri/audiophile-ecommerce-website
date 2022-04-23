@@ -9,6 +9,7 @@ function MainHeadPhones() {
     const sortProducts = targetData.sort((itemA, itemB) => itemA.slug < itemB.slug)
     console.log(data)
     console.log(sortProducts)
+    //  address={product.id}
     return (
         <div className='main'>
             <div className='main-products-container'>
@@ -18,9 +19,10 @@ function MainHeadPhones() {
                     tablet={product.categoryImage.tablet}
                     mobile={product.categoryImage.mobile}
                     name={product.name}
-                    description={product.description}
-                    address={product.id}
-                />)}                
+                    description={product.description}                       
+                    address={product.slug}
+                />)}  
+                            
             </div>
             <MainPrimaryNavs />
         </div>

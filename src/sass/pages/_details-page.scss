@@ -1,0 +1,23 @@
+@use "sass:math";
+@use "sass:color";
+@use "../base";
+@use "../utils";
+
+.return {
+    padding-inline: 1.5rem;
+}
+
+.btn-return {
+	top: 2rem;
+	display: inline-block;
+	position: relative;
+    text-decoration: none;
+    color: base.$clr-almost-black;
+
+    &:focus,
+    &:hover {        
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.25em;
+    }
+}

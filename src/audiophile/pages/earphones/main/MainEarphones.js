@@ -19,6 +19,7 @@ function MainEarphones() {
                     mobile={product.categoryImage.mobile}
                     name={product.name}
                     description={product.description}
+                    address={product.slug}
                 />)}
             </div>
             <MainPrimaryNavs />
