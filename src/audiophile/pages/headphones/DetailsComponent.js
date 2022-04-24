@@ -23,12 +23,12 @@ function DetailsComponent() {
   const decoratives = getProduct.gallery
   const otherProducts = getProduct.others
 
-
+  console.log(getProduct)
   console.log(data)
   console.log(otherProducts)
   console.log(decoratives)
   return (
-    <main>
+    <main className='main'>
       <div className='return'>
         <Link className='btn btn-return' to="/">Go back</Link>
       </div>
@@ -42,24 +42,10 @@ function DetailsComponent() {
         address={getProduct.id}
         hide={true}
         details={true}
+        currency={new Intl.NumberFormat('en-US',
+          { style: 'currency', currency: 'USD' }).format(getProduct.price)}
       />
 
-      <div className='add-to-cart container'>
-        <p className='product-cost'>
-          {new Intl.NumberFormat('en-US',
-            { style: 'currency', currency: 'USD' }).format(getProduct.price)}
-        </p>
-
-        <div className='cart-divider'>
-          <div className='quantity-control'>
-            <button className='btn btn-cart btn- minus'>-</button>
-            <span className='quantity'>0</span>
-            <button className="btn btn-cart add">+</button>
-          </div>
-          <button className='btns btn-add-to-cart'>Add to cart</button>
-        </div>
-
-      </div>
 
       <div className='features container'>
         <h3 className='features-title'>Features</h3>
@@ -77,30 +63,30 @@ function DetailsComponent() {
         </ul>
       </div>
 
-      <div className='decorative'>
-        <ul className='decorative-image-list'>
-          <li className='decorative-image-list-item decorative-image-list-item1 container'>
-            <DecorativeImages
-              desktop={`../.${decoratives.first.desktop}`}
-              tablet={`../.${decoratives.first.tablet}`}
-              mobile={`../.${decoratives.first.mobile}`}
-            />
-          </li>
-          <li className='decorative-image-list-item decorative-image-list-item2  container'>
-            <DecorativeImages
-              desktop={`../.${decoratives.second.desktop}`}
-              tablet={`../.${decoratives.second.tablet}`}
-              mobile={`../.${decoratives.second.mobile}`}
-            />
-          </li>
-          <li className='decorative-image-list-item decorative-image-list-item3 container'>
-            <DecorativeImages
-              desktop={`../.${decoratives.third.desktop}`}
-              tablet={`../.${decoratives.third.tablet}`}
-              mobile={`../.${decoratives.third.mobile}`}
-            />
-          </li>
-        </ul>
+      <div className='decorative container'>
+        <div className='decorative-image-list'>
+
+          <DecorativeImages
+            desktop={`../.${decoratives.first.desktop}`}
+            tablet={`../.${decoratives.first.tablet}`}
+            mobile={`../.${decoratives.first.mobile}`}
+          />
+
+
+          <DecorativeImages
+            desktop={`../.${decoratives.second.desktop}`}
+            tablet={`../.${decoratives.second.tablet}`}
+            mobile={`../.${decoratives.second.mobile}`}
+          />
+
+
+          <DecorativeImages
+            desktop={`../.${decoratives.third.desktop}`}
+            tablet={`../.${decoratives.third.tablet}`}
+            mobile={`../.${decoratives.third.mobile}`}
+          />
+
+        </div>
       </div>
 
       <div className='other-products container'>

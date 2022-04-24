@@ -127,12 +127,13 @@
     border: none;
     background-color: inherit;
     outline: none;
+    padding: 1rem;
 
     &:focus,
     &:hover {
         cursor: pointer;
         outline: dashed currentColor;
-        outline-offset: 0.15em;
+        outline-offset: -0.5em;
     }
 }
 

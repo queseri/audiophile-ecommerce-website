@@ -5,10 +5,14 @@
 
 .return {
     padding-inline: 1.5rem;
+
+    @include utils.mQ(38.75rem) {
+        padding-inline: 2.5rem;
+    }
 }
 
 .btn-return {
-    top: 2rem;
+    top: 1.5rem;
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -46,6 +50,7 @@
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    margin-top: 2rem;
 }
 
 .quantity-control {
@@ -64,7 +69,33 @@
     line-height: 1.5;
     letter-spacing: 0.86px;
     text-transform: uppercase;
+    text-align: left;
+}
+
+.other-products-title,
+.other-product-item-title {
     text-align: center;
+}
+
+.extras-list {
+    margin-block: 2rem;
+    & li + li {
+        margin-block-start: .5rem;
+    }
+    @include utils.mQ(38.75rem) {
+        flex: 1 1 50%;
+    }
+}
+
+.extra-title {
+    @include utils.mQ(38.75rem) {
+        flex: 1 1 50%;
+        text-align: left;
+    }
+}
+
+.other-product-item-title {
+	margin-block: 1rem;
 }
 
 .features-content {
@@ -73,20 +104,39 @@
     line-height: 1.7;
 }
 
+.extras {
+    @include utils.mQ(38.75rem) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 .extra-list-item {
     display: flex;
     gap: 2rem;
 }
 
 .other-products-list {
-	display: flex;
-	flex-direction: column;
-	gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 3rem;
+    margin-block-start: 3rem;
 }
 
 .decorative-image-list {
+    display: grid;
+    gap: 1rem;
+
     @include utils.mQ(38.75rem) {
-        display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+.shared-products-picture {
+    @include utils.mQ(38.75rem) {
+        &:nth-child(3) {
+            grid-area: 1/2/3/3;
+        }
+
     }
 }

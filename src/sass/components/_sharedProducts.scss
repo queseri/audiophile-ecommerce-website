@@ -61,11 +61,15 @@
     }
 }
 
+.shared-products {
+	padding-block: 0.75rem;
+}
+
 .shared-products-image-container {
     margin-block-start: 2rem;
 
-    @include utils.mQ(61.25rem) {
-        flex: 1 1 50%;
+    @include utils.mQ(38.75rem) {
+        flex: 1 1 40%;
     }
 }
 
@@ -74,10 +78,22 @@
     max-width: 35rem;
     margin-inline: auto;
 
+    @include utils.mQ(38.75rem) {
+        flex: 1 1 60%;
+    }
+
     @include utils.mQ(61.25rem) {
-        flex: 1 1 50%;
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+}
+
+.product-detail {
+    @include utils.mQ(38.75rem) {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
     }
 }

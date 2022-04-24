@@ -10,7 +10,7 @@ function MainEarphones() {
     console.log(data)
     console.log(sortProducts)
     return (
-        <div className='main'>
+        <main className='main'>
             <div className='main-products-container'>
                 {/*Feature products*/}
                 {sortProducts.map(product => <ProductsShared key={product.id}
@@ -23,7 +23,7 @@ function MainEarphones() {
                 />)}
             </div>
             <MainPrimaryNavs />
-        </div>
+        </main>
     )
 }
 
