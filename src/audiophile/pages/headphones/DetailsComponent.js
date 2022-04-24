@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import { useParams, useLocation, Link } from "react-router-dom"
 import { DataContext } from '../../context/Context'
 import ProductsShared from '../../shared/ProductsShared'
@@ -12,8 +12,11 @@ function DetailsComponent() {
   const location = useLocation()
   const pathname = location.pathname.split("/")
   const shortpath = `/${pathname[1]}/`
-  //const 
-  console.log(shortpath)
+  const detailsMain = useRef()
+
+    useEffect(() => {
+        detailsMain.current.focus()
+    })
 
   //const getProduct = data.products.find(product => parseInt(id) === product.id)
   const getProduct = data.products.find(product => id === product.slug)
@@ -28,7 +31,7 @@ function DetailsComponent() {
   console.log(otherProducts)
   console.log(decoratives)
   return (
-    <main className='main'>
+    <main className='main' tabIndex="-1" ref={detailsMain}>
       <div className='return'>
         <Link className='btn btn-return' to="/">Go back</Link>
       </div>

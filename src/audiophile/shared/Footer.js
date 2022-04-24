@@ -13,7 +13,7 @@ function Footer() {
                     <Logo />
                 </div>
 
-                <ul className={`footer-nav`} role="menu">                    
+                <ul className={`footer-nav`} role="menu">
                     <NavListBtn address="/" name="Home" />
                     <NavListBtn address="./headphones" name="Headphones" />
                     <NavListBtn address="./speakers" name="Speakers" />
@@ -33,7 +33,10 @@ function Footer() {
                 <div className='social-media'>
                     <ul className='social-list'>
                         <li className='social-link'>
-                            <a className='btn-social' href="./">
+                            <a className='btn-social'
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://www.facebook.com/chamu.mutezva">
                                 <span className='sr-only'>visit our facebook page</span>
                                 <img src={Facebook}
                                     alt=""
@@ -42,7 +45,10 @@ function Footer() {
                         </li>
 
                         <li className='social-link'>
-                            <a className='btn-social' href="./">
+                            <a className='btn-social'
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://twitter.com/ChamuMutezva">
                                 <span className='sr-only'>visit our twitter page</span>
                                 <img src={Twitter}
                                     alt=""
@@ -51,7 +57,10 @@ function Footer() {
                         </li>
 
                         <li className='social-link'>
-                            <a className='btn-social' href="./">
+                            <a className='btn-social'
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://www.instagram.com/mutezva/">
                                 <span className='sr-only'>visit our instagram page</span>
                                 <img src={Instagram}
                                     alt=""

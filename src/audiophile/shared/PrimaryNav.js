@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 //shared
 function PrimaryNav(props) {
+   
     return (
         <li className="primary-nav-list-item">
             <img className="primary-nav-image"
@@ -10,11 +12,11 @@ function PrimaryNav(props) {
                 aria-hidden="true" />
 
             <h4 className='headphones primary-nav-heading'>{props.title}</h4>
-            <a className='primary-nav-btn' href="./">
+            <Link to={`${props.address}`} className='primary-nav-btn'>
                 shop
                 <span className='sr-only'> {props.text} </span>
                 <img src={props.forward} alt="" aria-hidden="true" />
-            </a>
+            </Link>
         </li>
     )
 }

@@ -1,4 +1,5 @@
-import { Routes, Route, Outlet } from 'react-router-dom'
+import { useEffect } from 'react';
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 //import { Outlet } from 'react-router-dom'
 //import { Routes, Route, useLocation } from 'react-router-dom'
 
@@ -13,21 +14,39 @@ import { DataProvider } from "./audiophile/context/Context";
 //import Mark1 from './audiophile/pages/headphones/Mark1';
 
 function App() {
+
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+    console.log(pathname)
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
+
   return (
     <DataProvider>
       <div className="App">
         <Navigation />
         <Outlet />
         <>
-          <Routes>            
+          <ScrollToTop />
+          <Routes>
+
             <Route path="headphones/:id" element={<DetailsComponent />} />
             <Route path="headphones" element={<Headphones />} />
             <Route path="earphones/:id" element={<DetailsComponent />} />
             <Route path="earphones" element={<Earphones />} />
             <Route path="speakers/:id" element={<DetailsComponent />} />
             <Route path="speakers" element={<Speakers />} />
-            <Route exact path="/" element={<Home />} />   
-           
+            <Route exact path="/" element={<Home />} />
+            <Route path="*" element={<main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+            }
+            />
+
           </Routes>
         </>
         <Footer />

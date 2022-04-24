@@ -34,7 +34,7 @@
     &:hover {
         cursor: pointer;
         outline: dashed currentColor;
-        outline-offset: 0.15em;
+        outline-offset: -0.5em;
     }
 
     @include utils.mQ(61.25rem) {

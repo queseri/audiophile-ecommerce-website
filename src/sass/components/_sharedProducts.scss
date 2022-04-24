@@ -62,7 +62,7 @@
 }
 
 .shared-products {
-	padding-block: 0.75rem;
+    padding-block: 0.75rem;
 }
 
 .shared-products-image-container {
@@ -83,11 +83,17 @@
     }
 
     @include utils.mQ(61.25rem) {
-        
+
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+}
+
+.shared-products-img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
 }
 
 .product-detail {
