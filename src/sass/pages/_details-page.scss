@@ -48,7 +48,7 @@
 
 .cart-divider {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1rem;
     margin-top: 2rem;
 }
@@ -56,6 +56,7 @@
 .quantity-control {
     background-color: base.$clr-light-gray;
     flex: 1 1 40%;
+    max-width: 7.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

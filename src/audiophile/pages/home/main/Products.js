@@ -26,14 +26,14 @@ function Products(props) {
                         Upgrade to premium speakers that are phenomenally built to
                         deliver truly remarkable sound
                     </p>
-                    <ButtonView name="Zx9 speaker" bgblack={true} />
+                    <ButtonView name="Zx9 speaker" bgblack={true} address="speakers/zx9-speaker" />
                 </div>
             </div>
 
             <div className='products product2'>
                 <div className='product2-content'>
                     <h4 className='product-heading product2-heading'>Zx7 speaker</h4>
-                    <ButtonView name="Zx7 speaker" bgtransparent={true} />
+                    <ButtonView name="Zx7 speaker" bgtransparent={true} address="speakers/zx7-speaker" />
                 </div>
                 <div className='product2-image border-radius'>
                     <span className='inner-image'></span>
@@ -50,7 +50,7 @@ function Products(props) {
                 </div>
                 <div className='product3-content-container container border-radius'>
                     <h4 className='product-heading product3-heading'>Yx1 earphones</h4>
-                    <ButtonView name="Yx1 earphones" bgtransparent={true} />
+                    <ButtonView name="Yx1 earphones" bgtransparent={true} address="earphones/yx1-earphones"/>
                 </div>
             </div>
         </div>

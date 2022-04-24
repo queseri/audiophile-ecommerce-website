@@ -12,7 +12,7 @@ function Hero() {
           <p className="hero-content">
             Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
           </p>
-          <ButtonView />
+          <ButtonView name="xx99 mark 2 headphones" address="headphones/xx99-mark-two-headphones"/>
         </div>
       </div>
     </div>
