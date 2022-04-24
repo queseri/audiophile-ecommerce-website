@@ -4,7 +4,6 @@ import { DataContext } from '../../context/Context'
 import ProductsShared from '../../shared/ProductsShared'
 import DecorativeImages from '../../shared/DecorativeImages'
 import ButtonView from '../../shared/ButtonView'
-// import { useParams, useNavigate, Link } from "react-router-dom"
 
 function DetailsComponent() {
   const data = useContext(DataContext)
@@ -17,8 +16,7 @@ function DetailsComponent() {
     useEffect(() => {
         detailsMain.current.focus()
     })
-
-  //const getProduct = data.products.find(product => parseInt(id) === product.id)
+ 
   const getProduct = data.products.find(product => id === product.slug)
   const features = getProduct.features.split("\n\n") // split paragraphs
 
@@ -26,10 +24,6 @@ function DetailsComponent() {
   const decoratives = getProduct.gallery
   const otherProducts = getProduct.others
 
-  console.log(getProduct)
-  console.log(data)
-  console.log(otherProducts)
-  console.log(decoratives)
   return (
     <main className='main' tabIndex="-1" ref={detailsMain}>
       <div className='return'>
