@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import MainPrimaryNavs from '../../../shared/MainPrimaryNavs'
 import Products from './Products'
-import { DataContext } from '../../../context/Context'
+//import { DataContext } from '../../../context/Context'
 
 function Main() {
-    const data = useContext(DataContext)
-    console.log(data)
-    const FilteredPrimaryNav = data.products.filter(item => item.category === "earphones" || item.category === "speakers")
-    const SortFilterPrimaryNav = FilteredPrimaryNav.sort((a, b) => b.id - a.id)
-    console.log(SortFilterPrimaryNav)
+  //  const data = useContext(DataContext)
+   // console.log(data)
+ //   const FilteredPrimaryNav = data.products.filter(item => item.category === "earphones" || item.category === "speakers")
+   // const SortFilterPrimaryNav = FilteredPrimaryNav.sort((a, b) => b.id - a.id)
+  //  console.log(SortFilterPrimaryNav)
     return (
         <main className='main'>
             <MainPrimaryNavs />

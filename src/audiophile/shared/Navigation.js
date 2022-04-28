@@ -2,12 +2,18 @@ import React, { useState } from 'react'
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
 import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
 import NavListBtn from './NavListBtn'
+import Cart from './Cart'
 import Logo from './Logo'
 
 function Navigation() {
     const [menu, setMenu] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     function handleMenu() {
         setMenu(!menu)
+    }
+
+    function handleCart() {
+        setIsOpen(!isOpen)
     }
     return (
         <div className="main-navigation">
@@ -33,11 +39,12 @@ function Navigation() {
                 </ul>
 
                 <div className="cart-container">
-                    <button className="btns btn-cart">
+                    <button className="btns btn-cart" onClick={handleCart}>
                         <img src={CartIcon} alt="" />
                     </button>
                 </div>
             </nav>
+            <Cart open={isOpen}/>
         </div>
     )
 }

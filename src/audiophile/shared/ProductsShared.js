@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+//import { useLocation } from 'react-router-dom'
 import ButtonView from './ButtonView'
+import { DataContext } from '../context/Context'
 import DecorativeImages from './DecorativeImages'
 
 function ProductsShared(props) {
+    // const [currentProduct, setCurrentProduct] = useState(null)
     const details = props.details ? "product-detail" : ""
+    const { handleAdd, handleMinus, quantity,  addToCart } = useContext(DataContext)
+   // const { pathname } = useLocation()
+   
+   console.log(props.address)
     return (
         <div className={`shared-products container ${details}`}>
             <div className='shared-products-image-container border-radius'>
@@ -22,11 +29,14 @@ function ProductsShared(props) {
 
                         <div className='cart-divider'>
                             <div className='quantity-control'>
-                                <button className='btn btn-cart btn- minus'>-</button>
-                                <span className='quantity'>0</span>
-                                <button className="btn btn-cart add">+</button>
+                                <button className='btn btn-cart btn- minus' onClick={handleMinus}>-</button>
+                                <span className='quantity'>
+                                    {quantity}
+                                </span>
+                                <button className="btn btn-cart add" onClick={handleAdd}>+</button>                                
                             </div>
-                            <button className='btns btn-add-to-cart'>Add to cart</button>
+                            <button className='btns btn-add-to-cart'
+                             onClick={() => addToCart(props.address, props.name, props.currency)}>Add to cart</button>
                         </div>
 
                     </div>

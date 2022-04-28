@@ -1,0 +1,20 @@
+@use "sass:math";
+@use "sass:color";
+@use "../base";
+@use "../utils";
+
+.cart {
+    display: none;
+	position: absolute;
+	top: 5rem;
+	background-color: white;
+	width: 90%;
+    left: 50%;
+    margin-inline-start: -45%;
+}
+
+.show-cart {
+    display: block;
+}
+
+

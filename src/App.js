@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
-//import { Outlet } from 'react-router-dom'
-//import { Routes, Route, useLocation } from 'react-router-dom'
 
 import Navigation from './audiophile/shared/Navigation';
 import Footer from './audiophile/shared/Footer';
@@ -11,13 +9,12 @@ import Earphones from './audiophile/pages/earphones/Earphones';
 import Speakers from './audiophile/pages/speakers/Speakers';
 import DetailsComponent from './audiophile/pages/headphones/DetailsComponent';
 import { DataProvider } from "./audiophile/context/Context";
-//import Mark1 from './audiophile/pages/headphones/Mark1';
 
 function App() {
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();
-    console.log(pathname)
+   
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
@@ -41,8 +38,8 @@ function App() {
             <Route path="speakers/:id" element={<DetailsComponent />} />
             <Route path="speakers" element={<Speakers />} />
             <Route exact path="/" element={<Home />} />
-            <Route path="*" element={<main style={{ padding: "1rem" }}>
-              <p>There's nothing here!</p>
+            <Route path="*" element={<main style={{ padding: "1rem", marginBlock: "2rem" }}>
+              <p style={{ marginBlock: "2rem" }}>There's nothing here!</p>
             </main>
             }
             />
