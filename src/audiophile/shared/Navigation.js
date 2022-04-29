@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
 import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
 import NavListBtn from './NavListBtn'
@@ -15,6 +15,15 @@ function Navigation() {
     function handleCart() {
         setIsOpen(!isOpen)
     }
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add('body-hide-overflow');
+        } else {
+            document.body.classList.remove('body-hide-overflow');
+        }
+    }, [isOpen])
+
     return (
         <div className="main-navigation">
             <nav className="nav container flex">
@@ -35,7 +44,7 @@ function Navigation() {
                     <NavListBtn address="/" name="Home" onclick={handleMenu} />
                     <NavListBtn address="./headphones" name="Headphones" onclick={handleMenu} />
                     <NavListBtn address="./speakers" name="Speakers" onclick={handleMenu} />
-                    <NavListBtn address="./earphones" name="Earphones" onclick={handleMenu}/>
+                    <NavListBtn address="./earphones" name="Earphones" onclick={handleMenu} />
                 </ul>
 
                 <div className="cart-container">
@@ -44,7 +53,8 @@ function Navigation() {
                     </button>
                 </div>
             </nav>
-            <Cart open={isOpen}/>
+            <Cart open={isOpen} />
+            <div className={`overlay ${isOpen ? "show-overlay" : ""}`}></div>
         </div>
     )
 }

@@ -26,6 +26,7 @@ function DetailsComponent() {
 
   return (
     <main className='main' tabIndex="-1" ref={detailsMain}>
+      
       <div className='return'>
         <Link className='btn btn-return' to="/">Go back</Link>
         <h1 className="sr-only">Audiophile entertainment products</h1>

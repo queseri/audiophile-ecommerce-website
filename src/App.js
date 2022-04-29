@@ -25,6 +25,7 @@ function App() {
   return (
     <DataProvider>
       <div className="App">
+      
         <Navigation />
         <Outlet />
         <>
@@ -47,6 +48,7 @@ function App() {
           </Routes>
         </>
         <Footer />
+        
       </div>
     </DataProvider>
   );
