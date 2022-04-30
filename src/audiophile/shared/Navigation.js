@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect , useContext} from 'react'
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
 import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
+import { DataContext } from '../context/Context'
 import NavListBtn from './NavListBtn'
 import Cart from './Cart'
 import Logo from './Logo'
 
 function Navigation() {
-    const [menu, setMenu] = useState(false)
-    const [isOpen, setIsOpen] = useState(false)
+    const [menu, setMenu] = useState(false)    
+    const { isOpen, handleCart} = useContext(DataContext)
+
     function handleMenu() {
         setMenu(!menu)
     }
 
-    function handleCart() {
-        setIsOpen(!isOpen)
-    }
-
     useEffect(() => {
+        console.log(window.document.body.innerHeight)
         if (isOpen) {
             document.body.classList.add('body-hide-overflow');
         } else {

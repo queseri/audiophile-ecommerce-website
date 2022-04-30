@@ -10,7 +10,7 @@ function ProductsShared(props) {
     const { handleAdd, handleMinus, quantity,  addToCart } = useContext(DataContext)
    // const { pathname } = useLocation()
    
-   console.log(props.address)
+   console.log(props)
     return (
         <div className={`shared-products container ${details}`}>
             <div className='shared-products-image-container border-radius'>

@@ -12,6 +12,7 @@ export const DataProvider = (props) => {
     const [quantity, setQuantity] = useState(0)
     const [error, setError] = useState(null)
     const [cart, setCart] = useState([])
+    const [isOpen, setIsOpen] = useState(false)
     const { pathname } = useLocation()
 
     useEffect(() => {
@@ -78,6 +79,10 @@ export const DataProvider = (props) => {
 
     }
 
+    function handleCart() {
+        setIsOpen(!isOpen)
+    }
+
     const handleAdd = () => {
         setQuantity(() => quantity + 1)
         console.log(cart)
@@ -95,7 +100,7 @@ export const DataProvider = (props) => {
         </div>
     }
     return (
-        <DataContext.Provider value={{ products, quantity, handleAdd, handleMinus, cart, addToCart }}>
+        <DataContext.Provider value={{ products, quantity, handleAdd, handleMinus, cart, setCart, addToCart, handleCart, isOpen }}>
             {props.children}
         </DataContext.Provider>
     )

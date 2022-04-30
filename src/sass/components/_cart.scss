@@ -5,13 +5,23 @@
 
 .cart {
     display: none;
-	position: absolute;
-	top: 5rem;
-	background-color: white;
-	width: 90%;
+    position: absolute;
+    top: 5rem;
+    background-color: white;
+    max-width: 23.56rem;
+    width: 90%;
     left: 50%;
     margin-inline-start: -45%;
     z-index: 2;
+    padding: 1rem;
+
+    .quantity-control {
+        flex: 1 1 45%;
+    }
+
+    .btn-cart {
+        padding: .5rem;
+    }
 }
 
 .show-cart {
@@ -21,7 +31,7 @@
 .overlay {
     display: none;
     position: absolute;
-    min-height: 100vh;
+    min-height: 400vh;
     width: 100%;
     background-color: base.$clr-light-gray;
     opacity: 0.8;
@@ -33,8 +43,52 @@
     display: block;
 }
 
-.body-hide-overflow {
-    overflow: hidden;
+//.body-hide-overflow {
+  //  overflow: hidden;
+//}
+
+.cart-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.cart-list-item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
 
+.cart-img-container {
+    flex: 1 1 25%;
+}
+
+.cart-item-detail {
+    flex: 30%;
+}
+
+.btn-checkout {
+    padding: 1rem;
+    background-color: base.$clr-orange;
+    text-align: center;
+    color: base.$clr-white;
+}
+
+.cart-totals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
