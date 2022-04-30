@@ -1,0 +1,51 @@
+@use "sass:math";
+@use "sass:color";
+@use "../base";
+@use "../utils";
+
+.checkout-page {
+    background-color: base.$clr-light-gray;
+    // padding-block-start: 1rem;
+}
+
+.checkout {
+    background-color: base.$clr-white;
+    top: 4rem;
+    position: relative;
+
+    .return {
+        padding-inline: 0;
+    }
+
+    .btn-return {
+        top: 0;
+    }
+}
+
+.checkout-title {
+    padding-block-end: 1rem;
+    font-size: base.$fs-28;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+.form-group {
+    border: none;
+    padding-block: 1rem;
+}
+
+.form-input-container {
+	display: flex;
+	flex-direction: column;
+	margin-block-end: 2rem;
+}
+
+.form-input {
+	padding: .5rem 1rem;
+}
