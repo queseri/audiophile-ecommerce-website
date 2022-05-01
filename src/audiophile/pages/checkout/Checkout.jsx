@@ -8,7 +8,7 @@ function Checkout() {
   const { cart } = useContext(DataContext)
   const shippingAmount = 50
   const vat = 0.2
-  const numItemsInCart = cart.reduce((total, item) => total + item.qty, 0)
+  //const numItemsInCart = cart.reduce((total, item) => total + item.qty, 0)
   const totalAmount = cart.reduce((total, item) => (total +
     (item.qty * item.price.replace("$", "").replace(",", ""))), 0)
   const vatAmount = vat * totalAmount
