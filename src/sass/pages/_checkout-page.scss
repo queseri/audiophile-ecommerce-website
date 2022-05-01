@@ -20,6 +20,10 @@
     .btn-return {
         top: 0;
     }
+
+    @include utils.mQ(61.25rem) {
+        top: 0;
+    }
 }
 
 .checkout-title {
@@ -98,17 +102,64 @@
 
 .payment-title {
     font-size: base.$fs-16;
-    @include utils.mQ(38.75rem) {       
+
+    @include utils.mQ(38.75rem) {
         flex: 1 1 50%;
     }
 }
 
 .emoney-payment-number {
-    @include utils.mQ(38.75rem) {       
+    @include utils.mQ(38.75rem) {
         flex: 1 1 50%;
+    }
+}
+
+.payment-methods {
+    border: none;
+}
+
+.cash-payments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+
+    @include utils.mQ(38.75rem) {
+        flex-direction: row;
+        gap: 1rem;
     }
 }
 
 .hide-card-details {
     display: none;
+}
+
+.totals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-page {
+    position: relative;
+
+    @include utils.mQ(61.25rem) {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-block-start: 8rem;
+    }
+}
+
+.checkout-return {
+    position: absolute;
+    top: 3rem;
+}
+
+.main-checkout-wrapper {
+    @include utils.mQ(61.25rem) {
+        flex: 1 1 60%;
+    }
 }

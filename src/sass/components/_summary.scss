@@ -1,0 +1,70 @@
+@use "sass:math";
+@use "sass:color";
+@use "../base";
+@use "../utils";
+
+.summary {
+    background: base.$clr-white;
+    margin-block-start: 8rem;
+
+    @include utils.mQ(61.25rem) { 
+        margin-block-start: 0;
+        flex: 1 1 40%;
+    }
+}
+
+.display-totals {
+    margin-block-start: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.summary-title {
+    font-size: base.$fs-18;
+    color: base.$clr-almost-black;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-block-end: 1rem;
+}
+
+.item-quantity {
+    flex: 1 1 35%;
+}
+
+.cart-unit-cost {
+    font-size: base.$fs-14;
+    font-weight: 800;
+    color: base.$clr-almost-black;
+    opacity: 0.5;
+}
+
+.totals {
+    font-size: base.$fs-15;
+    text-transform: uppercase;
+    font-weight: 800;
+    opacity: 0.5;
+    color: base.$clr-almost-black;
+
+    .net,
+    .shipping-amount,
+    .vat-amount,
+    .grand-amount {
+        color: base.$clr-black;
+        opacity: 1;
+    }
+}
+
+.pay-btn {
+    border: none;
+    outline: none;
+    padding: 1rem;
+
+    &:focus,
+    &:hover {
+        color: base.$clr-white;
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: -0.5em;
+    }
+}

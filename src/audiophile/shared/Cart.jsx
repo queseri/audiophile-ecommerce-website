@@ -5,9 +5,15 @@ import { DataContext } from '../context/Context'
 
 function Cart(props) {
   const { cart, setCart, handleCart } = useContext(DataContext)
+  const numItemsInCart = cart.reduce((total, item) => total + item.qty, 0)
+  const totalAmount = cart.reduce((total, item) => (total +
+    (item.qty * item.price.replace("$", "").replace(",", ""))), 0)
+  console.log(totalAmount)
   const navigate = useNavigate()
+
   console.log(navigate)
   console.log(cart)
+  console.log(`The number of items in the cart is ${numItemsInCart}`)
 
   const handleOneItemAddition = (id) => {
     const targetObj = cart.find(item => item.id === id)
@@ -67,7 +73,10 @@ function Cart(props) {
 
           <div className='cart-totals'>
             <p className='total-label'>Total</p>
-            <p className='total-amount'>the total is</p>
+            <p className='total-amount'>
+              {new Intl.NumberFormat('en-US',
+                { style: 'currency', currency: 'USD' }).format(totalAmount)}
+            </p>
           </div>
 
           <Link to="./checkout" className='bg-orange text-white btn-checkout' onClick={handleCart}>
