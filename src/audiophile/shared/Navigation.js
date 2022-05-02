@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useContext} from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Hamburger from '../../assets/shared/tablet/icon-hamburger.svg'
 import CartIcon from '../../assets/shared/desktop/icon-cart.svg'
 import { DataContext } from '../context/Context'
@@ -7,8 +7,8 @@ import Cart from './Cart'
 import Logo from './Logo'
 
 function Navigation() {
-    const [menu, setMenu] = useState(false)    
-    const { isOpen, handleCart} = useContext(DataContext)
+    const [menu, setMenu] = useState(false)
+    const { isOpen, handleCart, cart } = useContext(DataContext)
 
     function handleMenu() {
         setMenu(!menu)
@@ -48,12 +48,16 @@ function Navigation() {
 
                 <div className="cart-container">
                     <button className="btns btn-cart" onClick={handleCart}>
+                        <span className="sr-only">number of items in the cart</span>
                         <img src={CartIcon} alt="" />
                     </button>
+                    <span className={`cart-total ${cart.length === 0 ? "hide-cart-total" : ""}`}>{cart.length}</span>
                 </div>
             </nav>
-            <Cart open={isOpen} />
-            <div className={`overlay ${isOpen ? "show-overlay" : ""}`}></div>
+
+            <div className={`overlay ${isOpen ? "show-overlay" : ""}`}>
+                <Cart open={isOpen} />
+            </div>
         </div>
     )
 }

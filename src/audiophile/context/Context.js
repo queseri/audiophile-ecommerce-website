@@ -100,7 +100,8 @@ export const DataProvider = (props) => {
         </div>
     }
     return (
-        <DataContext.Provider value={{ products, quantity, handleAdd, handleMinus, cart, setCart, addToCart, handleCart, isOpen }}>
+        <DataContext.Provider value={{ products, quantity, handleAdd, handleMinus,
+         cart, setCart, addToCart, handleCart, isOpen, setIsOpen }}>
             {props.children}
         </DataContext.Provider>
     )

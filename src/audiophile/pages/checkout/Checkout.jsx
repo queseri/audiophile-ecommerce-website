@@ -1,11 +1,14 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { DataContext } from '../../context/Context'
 import CashPayment from '../../../assets/shared/mobile/payment.svg'
+import CartSummary from './CartSummary'
+import Confirmation from './Confirmation'
 
 function Checkout() {
 
   const { cart } = useContext(DataContext)
+  const checkoutRef = useRef()
   const shippingAmount = 50
   const vat = 0.2
   //const numItemsInCart = cart.reduce((total, item) => total + item.qty, 0)
@@ -31,6 +34,7 @@ function Checkout() {
   }
 
   const [formData, setFormData] = useState(initialState)
+  const [proceedToPay, setProceedToPay] = useState(false)
 
   const onChange = (e) => {
 
@@ -51,8 +55,31 @@ function Checkout() {
     emoneyPin
   } = formData
 
+  const handlePay = () => {
+    console.log("payment in progress")
+    document.body.classList.add('body-hide-overflow')
+    setProceedToPay(true)
+    console.log(proceedToPay)
+  }
+
+  const handleBack = () => {
+    document.body.classList.remove('body-hide-overflow')
+    setProceedToPay(false)
+  }
+
+  useEffect(() => {
+    if (proceedToPay) {
+      window.scrollTo(0, 0);
+    }
+  }, [proceedToPay])
+
+  useEffect(() => {
+    checkoutRef.current.focus()
+  })
+
   return (
-    <main className='main container  checkout-page'>
+    <main className='main container  checkout-page' tabIndex={-1} ref={checkoutRef}>
+      <div className="checkout-overlay"></div>
       <div className='main-checkout-wrapper'>
         <div className='return checkout-return'>
           <Link className='btn btn-return' to="/">Go back</Link>
@@ -64,7 +91,7 @@ function Checkout() {
           <h2 className='checkout-title'>Checkout</h2>
 
           <form className='form'>
-
+            {/* Billing information - start */}
             <fieldset className='billing form-group'>
               <legend className='checkout-headers text-orange'>Billing details</legend>
               <div className='form-inputs-wrapper'>
@@ -93,7 +120,9 @@ function Checkout() {
                 </div>
               </div>
             </fieldset>
+            {/* Billing information - end */}
 
+            {/* Shipping information - start */}
             <fieldset className='shipping form-group'>
               <legend className='checkout-headers text-orange'>Shipping info</legend>
               <div className='form-inputs-wrapper'>
@@ -128,7 +157,9 @@ function Checkout() {
                 </div>
               </div>
             </fieldset>
+            {/* Shipping information - end */}
 
+            {/* Payment information - start */}
             <fieldset className='payments form-group'>
 
               <legend className='checkout-headers payment-option-header text-orange'>Payment details</legend>
@@ -151,6 +182,9 @@ function Checkout() {
 
               </div>
             </fieldset>
+            {/* Payment information - end */}
+
+            {/* Payment methods - start */}
             <fieldset className='payment-methods'>
               <div className={`cash-payments ${payment !== "emoney" ? "" : "hide-card-details"}`}>
                 <img src={CashPayment} alt="" />
@@ -179,70 +213,17 @@ function Checkout() {
               </div>
 
             </fieldset>
+            {/* Payment methods - end */}
           </form>
         </div>
       </div>
-      <div className='summary container'>
-        <h2 className='summary-title'>Summary</h2>
-        <ul className='checkout-cart-list cart-list'>
-          {cart && cart.map(item => <li key={item.id} className='cart-list-item'>
-            <div className='cart-img-container border-radius'>
-              <img className='cart-item-img' src={item.image} alt="" />
-            </div>
-
-            <div className='cart-item-detail'>
-              <h4 className='cart-item-title'>{item.productName.split(" ")[0]}</h4>
-              <span className='cart-unit-cost'>
-                {item.price}
-              </span>
-            </div>
-
-            <div className='item-quantity'>
-              <p className='quantity'>{`x ${item.qty}`}</p>
-            </div>
-          </li>)}
-        </ul>
-
-        <div className='display-totals'>
-
-          <div className='net-totals totals'>
-            <span className='net-label'>Total</span>
-            <span className='net'>
-              {new Intl.NumberFormat('en-US',
-                { style: 'currency', currency: 'USD' }).format(totalAmount)}
-            </span>
-          </div>
-
-          <div className='shipping-totals totals'>
-            <span className='shipping-label'>Shipping</span>
-            <span className='shipping-amount'>
-              {new Intl.NumberFormat('en-US',
-                { style: 'currency', currency: 'USD' }).format(shippingAmount)}
-            </span>
-          </div>
-
-          <div className='vat-totals totals'>
-            <span className='vat-label'>Vat (Included)</span>
-            <span className='vat-amount'>
-              {new Intl.NumberFormat('en-US',
-                { style: 'currency', currency: 'USD' }).format(vatAmount)}
-            </span>
-          </div>
-
-          <div className='grand-totals totals'>
-            <span className='grand-label'>Grand label</span>
-            <span className='grand-amount'>
-              {new Intl.NumberFormat('en-US',
-                { style: 'currency', currency: 'USD' }).format(grandTotal)}
-            </span>
-          </div>
-
-          <button className='pay-btn bg-orange text-white'>
-            Continue and pay
-          </button>
-        </div>
-
-      </div>
+     
+      <CartSummary cart={cart} totalAmount={totalAmount}
+        shippingAmount={shippingAmount} vatAmount={vatAmount}
+        grandTotal={grandTotal} handlePay={handlePay} />
+        
+      <Confirmation proceedToPay={proceedToPay} cart={cart}
+        grandTotal={grandTotal} handleBack={handleBack} />
 
     </main>
   )

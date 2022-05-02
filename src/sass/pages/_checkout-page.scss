@@ -12,6 +12,7 @@
     top: 4rem;
     position: relative;
     margin-block-end: 4rem;
+    padding-inline: 0;
 
     .return {
         padding-inline: 0;
@@ -19,6 +20,10 @@
 
     .btn-return {
         top: 0;
+    }
+
+    @include utils.mQ(38.75rem) {
+        padding-inline: 1.5rem;
     }
 
     @include utils.mQ(61.25rem) {
@@ -31,6 +36,7 @@
     font-size: base.$fs-28;
     font-weight: 700;
     text-transform: uppercase;
+    padding-inline: 1rem;
 }
 
 .form {
@@ -56,7 +62,7 @@
 
 .form-input-container-radio {
     border: 1px solid base.$clr-almost-black;
-    padding: 1rem;
+    padding: 1rem .5rem;
     margin-block-end: 1rem;
 }
 
@@ -163,3 +169,16 @@
         flex: 1 1 60%;
     }
 }
+
+.checkout-overlay {
+    top: 0;
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    background-color: base.$clr-light-gray;
+}
+
+
+.body-hide-overflow {
+     // overflow: hidden;
+  }

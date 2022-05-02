@@ -7,9 +7,7 @@ function MainHeadPhones() {
     const data = useContext(DataContext)
     const targetData = data.products.filter(item => item.category === "headphones")
     const sortProducts = targetData.sort((itemA, itemB) => itemA.slug < itemB.slug)
-    console.log(data)
-    console.log(sortProducts)
-    //  address={product.id}
+  
     return (
         <div className='main'>
             <div className='main-products-container'>

@@ -5,19 +5,17 @@ import { DataContext } from '../context/Context'
 
 function Cart(props) {
   const { cart, setCart, handleCart } = useContext(DataContext)
-  const numItemsInCart = cart.reduce((total, item) => total + item.qty, 0)
+  // const numItemsInCart = cart.reduce((total, item) => total + item.qty, 0)
   const totalAmount = cart.reduce((total, item) => (total +
     (item.qty * item.price.replace("$", "").replace(",", ""))), 0)
   console.log(totalAmount)
   const navigate = useNavigate()
 
   console.log(navigate)
-  console.log(cart)
-  console.log(`The number of items in the cart is ${numItemsInCart}`)
 
   const handleOneItemAddition = (id) => {
     const targetObj = cart.find(item => item.id === id)
-    // console.log(targetObj)   
+
     if (targetObj) {
       setCart(() => cart.map(item => item.id === id ? { ...item, qty: item.qty + 1 } : item))
     }
@@ -34,14 +32,20 @@ function Cart(props) {
   }
 
   return (
-    <div className={`cart ${props.open ? "show-cart" : ""}`}>
+    <div className={`cart border-radius ${props.open ? "show-cart" : ""}`}>
 
       {cart.length === 0 ?
-        <h3>the cart is empty</h3> :
+        <div className='cart-main-empty'>
+           <h3 className='cart-title'>the cart is empty</h3>
+          <button className='bg-orange text-white btn-checkout'
+            onClick={handleCart}>
+            Close Cart
+          </button>
+        </div> :
         <div className='cart-main'>
 
           <div className='cart-heading'>
-            <h3>Cart</h3>
+            <h3 className='cart-title'>Cart</h3>
             <button className='remove-all'>Remove all</button>
           </div>
 
@@ -60,11 +64,15 @@ function Cart(props) {
               </div>
 
               <div className='quantity-control'>
-                <button className='btn btn-cart btn- minus' onClick={() => handleOneItemSubtraction(item.id)}>-</button>
+                <button className='btn btn-cart btn- minus'
+                  onClick={() => handleOneItemSubtraction(item.id)}>-</button>
+
                 <span className={`quantity quantity${item.id}`}>
                   {item.qty}
                 </span>
-                <button className='btn btn-cart add' onClick={() => handleOneItemAddition(item.id)}>+</button>
+
+                <button className='btn btn-cart add'
+                  onClick={() => handleOneItemAddition(item.id)}>+</button>
               </div>
 
             </li>)}
@@ -79,7 +87,9 @@ function Cart(props) {
             </p>
           </div>
 
-          <Link to="./checkout" className='bg-orange text-white btn-checkout' onClick={handleCart}>
+          <Link to="./checkout"
+            className='bg-orange text-white btn-checkout'
+            onClick={handleCart}>
             Checkout
           </Link>
         </div>

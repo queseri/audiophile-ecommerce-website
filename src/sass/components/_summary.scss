@@ -7,7 +7,7 @@
     background: base.$clr-white;
     margin-block-start: 8rem;
 
-    @include utils.mQ(61.25rem) { 
+    @include utils.mQ(61.25rem) {
         margin-block-start: 0;
         flex: 1 1 40%;
     }
@@ -67,4 +67,69 @@
         outline: dashed currentColor;
         outline-offset: -0.5em;
     }
+}
+
+.check-mark-wrapper-img {
+    padding: 1rem;
+    background-color: base.$clr-orange;
+    border-radius: 50%;
+}
+
+.final-order {
+   // display: none;
+    position: relative;
+    background-color: base.$clr-white;
+    top: 2rem;
+    left: 0;
+    width: 90%;
+   max-width: 31.25rem;
+   // margin-left: -45%;
+}
+
+.show-final-order {
+    left: 0;
+    display: block;
+    margin-inline: 1rem;
+  //  top: 2rem;
+}
+
+.btn-modal {
+    background-color: base.$clr-orange;
+    color: base.$clr-white;
+    display: block;
+    text-align: center;
+    padding-block: 1rem;
+    margin-block-start: 2rem;
+    text-decoration: none;
+}
+
+.card-sect1-container {
+    background-color: base.$clr-light-gray;
+}
+
+.card-sect1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-extra-content {
+    text-align: center;
+}
+
+.card-sect2-container {
+    color: base.$clr-white;
+    background: base.$clr-almost-black;
+    padding: 1rem;
+}
+
+.grand-total-title {
+    font-size: base.$fs-15;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.grand-amount {
+    font-size: base.$fs-18;
+    font-weight: 800;
 }
