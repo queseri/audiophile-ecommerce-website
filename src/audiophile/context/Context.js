@@ -13,6 +13,7 @@ export const DataProvider = (props) => {
     const [error, setError] = useState(null)
     const [cart, setCart] = useState([])
     const [isOpen, setIsOpen] = useState(false)
+    const [timer, setTimer] = useState(0)
     const { pathname } = useLocation()
 
     useEffect(() => {
@@ -94,14 +95,31 @@ export const DataProvider = (props) => {
     }
 
     if (fetchStatus !== "success") {
-        return <div className='loading-flex'>
-            <Watch color="#00BFFF" height={200} width={200} />
-            <p>Loading...</p>
-        </div>
+        const fetchStatusTimer = setInterval(() => {
+            setTimer(() => timer + 1)
+            if (fetchStatus) {
+                clearInterval(fetchStatusTimer)
+            }
+
+        }, 1000)
+
+        return timer > 10 ?
+            <div className='loading-flex'>
+                <Watch color="#00BFFF" height={200} width={200} />
+                <h2>Loading has taken longer than expected </h2>
+                <p>Please check your network!</p>
+            </div> :
+
+            <div className='loading-flex'>
+                <Watch color="#00BFFF" height={200} width={200} />
+                <p>Loading... {timer} sec</p>
+            </div>
     }
     return (
-        <DataContext.Provider value={{ products, quantity, handleAdd, handleMinus,
-         cart, setCart, addToCart, handleCart, isOpen, setIsOpen }}>
+        <DataContext.Provider value={{
+            products, quantity, handleAdd, handleMinus,
+            cart, setCart, addToCart, handleCart, isOpen, setIsOpen
+        }}>
             {props.children}
         </DataContext.Provider>
     )
