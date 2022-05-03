@@ -30,7 +30,7 @@ function ProductsShared(props) {
                         <div className='cart-divider'>
                             <div className='quantity-control'>
                                 <button className='btn btn-cart btn- minus' onClick={handleMinus}>-</button>
-                                <span className='quantity'>
+                                <span className='quantity' aria-live='polite'>
                                     {quantity}
                                 </span>
                                 <button className="btn btn-cart add" onClick={handleAdd}>+</button>                                

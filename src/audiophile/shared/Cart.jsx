@@ -28,7 +28,7 @@ function Cart(props) {
     if (targetObj) {
       setCart(() => cart.map(item => item.id === id ? { ...item, qty: item.qty - 1 } : item))
     }
-    console.log(cart)
+   // console.log(cart)
   }
 
   return (

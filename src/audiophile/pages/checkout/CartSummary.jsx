@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CartSummary({cart, totalAmount, shippingAmount, vatAmount, grandTotal, handlePay}) {
+function CartSummary({ cart, totalAmount, shippingAmount, vatAmount, grandTotal, onSubmit }) {
     return (
 
         <div className='summary container'>
@@ -58,7 +58,7 @@ function CartSummary({cart, totalAmount, shippingAmount, vatAmount, grandTotal, 
                     </span>
                 </div>
 
-                <button className='pay-btn bg-orange text-white' onClick={handlePay}>
+                <button type='submit' className='pay-btn bg-orange text-white' onClick={onSubmit} >
                     Continue and pay
                 </button>
             </div>
