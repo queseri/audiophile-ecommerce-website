@@ -19,7 +19,7 @@ function Cart(props) {
     if (targetObj) {
       setCart(() => cart.map(item => item.id === id ? { ...item, qty: item.qty + 1 } : item))
     }
-    console.log(cart)
+    
   }
 
   const handleOneItemSubtraction = (id) => {
@@ -28,7 +28,7 @@ function Cart(props) {
     if (targetObj) {
       setCart(() => cart.map(item => item.id === id ? { ...item, qty: item.qty - 1 } : item))
     }
-   // console.log(cart)
+   
   }
 
   return (
@@ -88,7 +88,7 @@ function Cart(props) {
           </div>
 
           <Link to="./checkout"
-            className='bg-orange text-white btn-checkout'
+            className={`bg-orange text-white btn-checkout`}
             onClick={handleCart}>
             Checkout
           </Link>

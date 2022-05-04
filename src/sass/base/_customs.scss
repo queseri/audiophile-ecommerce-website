@@ -20,6 +20,8 @@ $clr-white: hsl(0, 0%, 100%);
 /*        FONT SIZES                   */
 /*-------------------------------------*/
 
+$fs-12: utils.calculateRem(12);
+$fs-13: utils.calculateRem(13);
 $fs-14: utils.calculateRem(14);
 $fs-15: utils.calculateRem(15);
 $fs-16: utils.calculateRem(16);

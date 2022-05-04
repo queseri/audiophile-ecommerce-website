@@ -4,7 +4,7 @@
 @use "../utils";
 
 .return {
-    padding-inline: 1.5rem;
+    padding-inline: 0;
 
     @include utils.mQ(38.75rem) {
         padding-inline: 2.5rem;
@@ -12,7 +12,8 @@
 }
 
 .btn-return {
-    top: 1.5rem;
+    top: 0;
+    left: 0;
     display: inline-block;
     position: relative;
     text-decoration: none;

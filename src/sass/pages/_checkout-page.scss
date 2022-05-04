@@ -57,7 +57,20 @@
 
 .form-input {
     padding: 1rem;
-    border: 1px solid base.$clr-almost-black;
+    border: 1px solid base.$clr-light-gray;
+    margin-top: .5rem;
+}
+
+label {
+    font-size: base.$fs-12;
+    font-weight: 800;
+}
+
+.checkout-headers {
+    font-size: base.$fs-13;
+    letter-spacing: 0.93px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .form-input-container-radio {
@@ -107,7 +120,9 @@
 }
 
 .payment-title {
-    font-size: base.$fs-16;
+    font-size: base.$fs-12;
+    margin-block-end: .875rem;
+    text-transform: capitalize;
 
     @include utils.mQ(38.75rem) {
         flex: 1 1 50%;
@@ -180,5 +195,14 @@
 
 
 .body-hide-overflow {
-     // overflow: hidden;
-  }
+    // overflow: hidden;
+}
+
+.error__alert {
+    display: block;
+    color: red;
+}
+
+.hide-error {
+    display: none;
+}

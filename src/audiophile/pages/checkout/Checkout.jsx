@@ -56,86 +56,87 @@ function Checkout() {
 
   const onSubmit = (evt) => {
     evt.preventDefault()
+
     // validate()
     console.log(errors)
-    if (errors.name === "" || errors.name.trim("").length < 1 || errors.name.trim("").length > 50) {
-      alert("name must not be empty or greater than 50 letters")
+    if (formData.name === "" ||
+      formData.name.trim("").length < 1 ||
+      formData.name.trim("").length > 50) {
       document.getElementById("name").focus()
-      console.log(formData.name)
       return
     }
 
-    if (errors.email === "" || errors.email.trim("").length < 5 || errors.email.trim("").length > 50) {
-      alert("email must not be empty")
+    if (formData.email === "" ||
+      formData.email.trim("").length < 5 ||
+      formData.email.trim("").length > 50) {
       document.getElementById("email").focus()
-      console.log(formData.email)
       return
     }
 
-    if (!errors.email.match(validEmail)) {
+    if (!formData.email.match(validEmail)) {
       document.getElementById("email").focus()
       return
     }
 
     //validate phone
-    if (errors.phone === "" || errors.phone.trim("").length < 5 || errors.phone.trim("").length > 20) {
-      alert("phone must not be empty")
+    if (formData.phone === "" ||
+      formData.phone.trim("").length < 5 ||
+      formData.phone.trim("").length > 20) {
       document.getElementById("phone").focus()
-      console.log(formData.phone)
       return
     }
 
     //validate address
-    if (errors.address === "" || errors.address.trim("").length < 5 || errors.address.trim("").length > 60) {
-      alert("address must not be empty")
+    if (formData.address === "" ||
+      formData.address.trim("").length < 5 ||
+      formData.address.trim("").length > 60) {
       document.getElementById("address").focus()
-      console.log(formData.address)
       return
     }
 
     //validate zipCode
-    if (errors.zipCode === "" || errors.zipCode.trim("").length < 3 || errors.zipCode.trim("").length > 8) {
-      alert("zipcode must not be empty")
+    if (formData.zipCode === "" ||
+      formData.zipCode.trim("").length < 3 ||
+      formData.zipCode.trim("").length > 8) {
       document.getElementById("zip-code").focus()
-      console.log(formData.zipCode)
       return
     }
 
     //validate city
-    if (errors.city === "" || errors.city.trim("").length < 3 || errors.city.trim("").length > 60) {
-      alert("city must not be empty")
+    if (formData.city === "" ||
+      formData.city.trim("").length < 3 ||
+      formData.city.trim("").length > 60) {
       document.getElementById("city").focus()
-      console.log(formData.city)
       return
     }
 
     //validate country
-    if (errors.country === "" || errors.country.trim("").length < 3 || errors.country.trim("").length > 60) {
-      alert("country must not be empty")
+    if (formData.country === "" ||
+      formData.country.trim("").length < 3 ||
+      formData.country.trim("").length > 60) {
       document.getElementById("country").focus()
-      console.log(formData.country)
       return
     }
 
     //validate payment by card 
     if (formData.payment === "emoney") {
-      if (errors.cardNumber === "" || errors.cardNumber.trim("").length < 6 || errors.cardNumber.trim("").length > 12) {
-        alert("card number must not be empty")
+      if (formData.cardNumber === "" ||
+        formData.cardNumber.trim("").length < 6 ||
+        formData.cardNumber.trim("").length > 12) {
         document.getElementById("card-number").focus()
-        console.log(formData.cardNumber)
         return
       }
 
-      if (errors.pin === "" || errors.pin.trim("").length < 4 || errors.pin.trim("").length > 8) {
-        alert("card pin must not be empty")
+      if (formData.pin === "" ||
+        formData.pin.trim("").length < 4 ||
+        formData.pin.trim("").length > 8) {
         document.getElementById("card-pin").focus()
-        console.log(formData.cardNumber)
         return
       }
     }
 
-     document.body.classList.add('body-hide-overflow')
-     setProceedToPay(true)
+    document.body.classList.add('body-hide-overflow')
+    setProceedToPay(true)
     console.log(formData)
   }
 
@@ -150,20 +151,19 @@ function Checkout() {
     setProceedToPay(false)
   }
 
-  const validate = (evt) => {
-
+  const validate = () => {
     // Object to collect error feedback and to display on the form
     const errors = {
-      name,
-      email,
-      phone,
-      address,
-      zipCode,
-      city,
-      country,
-      payment,
-      cardNumber,
-      pin,
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      zipCode: '',
+      city: '',
+      country: '',
+      payment: '',
+      cardNumber: '',
+      pin: '',
     }
 
     //validate name
@@ -272,7 +272,9 @@ function Checkout() {
           <form className='form' onSubmit={onSubmit} >
             {/* Billing information - start */}
             <fieldset className='billing form-group'>
-              <legend className='checkout-headers text-orange'>Billing details</legend>
+              <legend className='checkout-headers text-orange'>
+                Billing details
+              </legend>
               <div className='form-inputs-wrapper'>
                 <div className='customer-name form-input-container'>
                   <label htmlFor="name">Name</label>
@@ -286,12 +288,13 @@ function Checkout() {
                     min={1}
                     max={50}
                     required
+                    aria-required={true}
                     onBlur={onBlur}
                     className='form-input  border-radius'
                   />
 
                   <br />
-                  {errors.name && <small className="error__alert">{errors.name}</small>}
+                  {errors.name && <small className={`error__alert`}>{errors.name}</small>}
                 </div>
 
                 <div className='customer-email form-input-container'>

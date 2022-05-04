@@ -35,7 +35,7 @@ function ProductsShared(props) {
                                 </span>
                                 <button className="btn btn-cart add" onClick={handleAdd}>+</button>                                
                             </div>
-                            <button className='btns btn-add-to-cart'
+                            <button className='btns btn-add-to-cart' 
                              onClick={() => addToCart(props.address, props.name, props.currency)}>Add to cart</button>
                         </div>
 

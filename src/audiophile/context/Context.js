@@ -80,7 +80,8 @@ export const DataProvider = (props) => {
 
     }
 
-    function handleCart() {
+    function handleCart(evt) {
+        console.log(evt.target)
         setIsOpen(!isOpen)
     }
 
