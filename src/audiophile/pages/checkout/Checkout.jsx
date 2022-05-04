@@ -11,6 +11,7 @@ function Checkout() {
   const checkoutRef = useRef()
   const shippingAmount = 50
   const vat = 0.2
+  const validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   //const numItemsInCart = cart.reduce((total, item) => total + item.qty, 0)
   const totalAmount = cart.reduce((total, item) => (total +
     (item.qty * item.price.replace("$", "").replace(",", ""))), 0)
@@ -26,6 +27,8 @@ function Checkout() {
     city: '',
     country: '',
     payment: 'emoney',
+    cardNumber: "",
+    pin: "",
     touched: {
       name: false,
       email: false,
@@ -34,6 +37,8 @@ function Checkout() {
       zipCode: false,
       city: false,
       country: false,
+      cardNumber: false,
+      pin: false
     },
   }
 
@@ -46,16 +51,92 @@ function Checkout() {
   }
 
   const { name, email, phone, address, zipCode, city,
-    country, payment, emoneyNum, emoneyPin
+    country, payment, cardNumber, pin
   } = formData
 
   const onSubmit = (evt) => {
     evt.preventDefault()
-   // validate()
+    // validate()
     console.log(errors)
-   //  document.body.classList.add('body-hide-overflow')
-    // setProceedToPay(true)
-     console.log(formData)
+    if (errors.name === "" || errors.name.trim("").length < 1 || errors.name.trim("").length > 50) {
+      alert("name must not be empty or greater than 50 letters")
+      document.getElementById("name").focus()
+      console.log(formData.name)
+      return
+    }
+
+    if (errors.email === "" || errors.email.trim("").length < 5 || errors.email.trim("").length > 50) {
+      alert("email must not be empty")
+      document.getElementById("email").focus()
+      console.log(formData.email)
+      return
+    }
+
+    if (!errors.email.match(validEmail)) {
+      document.getElementById("email").focus()
+      return
+    }
+
+    //validate phone
+    if (errors.phone === "" || errors.phone.trim("").length < 5 || errors.phone.trim("").length > 20) {
+      alert("phone must not be empty")
+      document.getElementById("phone").focus()
+      console.log(formData.phone)
+      return
+    }
+
+    //validate address
+    if (errors.address === "" || errors.address.trim("").length < 5 || errors.address.trim("").length > 60) {
+      alert("address must not be empty")
+      document.getElementById("address").focus()
+      console.log(formData.address)
+      return
+    }
+
+    //validate zipCode
+    if (errors.zipCode === "" || errors.zipCode.trim("").length < 3 || errors.zipCode.trim("").length > 8) {
+      alert("zipcode must not be empty")
+      document.getElementById("zip-code").focus()
+      console.log(formData.zipCode)
+      return
+    }
+
+    //validate city
+    if (errors.city === "" || errors.city.trim("").length < 3 || errors.city.trim("").length > 60) {
+      alert("city must not be empty")
+      document.getElementById("city").focus()
+      console.log(formData.city)
+      return
+    }
+
+    //validate country
+    if (errors.country === "" || errors.country.trim("").length < 3 || errors.country.trim("").length > 60) {
+      alert("country must not be empty")
+      document.getElementById("country").focus()
+      console.log(formData.country)
+      return
+    }
+
+    //validate payment by card 
+    if (formData.payment === "emoney") {
+      if (errors.cardNumber === "" || errors.cardNumber.trim("").length < 6 || errors.cardNumber.trim("").length > 12) {
+        alert("card number must not be empty")
+        document.getElementById("card-number").focus()
+        console.log(formData.cardNumber)
+        return
+      }
+
+      if (errors.pin === "" || errors.pin.trim("").length < 4 || errors.pin.trim("").length > 8) {
+        alert("card pin must not be empty")
+        document.getElementById("card-pin").focus()
+        console.log(formData.cardNumber)
+        return
+      }
+    }
+
+     document.body.classList.add('body-hide-overflow')
+     setProceedToPay(true)
+    console.log(formData)
   }
 
   const onBlur = (e) => {
@@ -70,7 +151,7 @@ function Checkout() {
   }
 
   const validate = (evt) => {
-    const validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
     // Object to collect error feedback and to display on the form
     const errors = {
       name,
@@ -81,19 +162,20 @@ function Checkout() {
       city,
       country,
       payment,
-      emoneyNum,
-      emoneyPin,
+      cardNumber,
+      pin,
     }
 
     //validate name
-    if ((formData.touched.name && formData.name.length <= 0) ||
-      (formData.touched.name && formData.touched.name.length > 30)) {
-      errors.name = 'First name must be between 3 and 30'
+    if ((formData.touched.name && formData.name.trim("").length < 1) ||
+      (formData.touched.name && formData.name.trim("").length > 30)) {
+      errors.name = 'First name must be between 1 and 30'
     }
 
     //validate email
-    if ((formData.touched.email && formData.email.length <= 0)) {
-      errors.email = 'Email cannot be empty'
+    if ((formData.touched.email && formData.email.trim("").length <= 5) ||
+      (formData.touched.email && formData.email.trim("").length > 50)) {
+      errors.email = 'Email must be between 5 and 50 letters'
     }
 
     if ((formData.touched.email && !formData.email.match(validEmail))) {
@@ -102,13 +184,13 @@ function Checkout() {
 
     //validate phone
     if ((formData.touched.phone && formData.phone.length <= 5) ||
-      (formData.touched.phone && formData.phone.length > 50)) {
+      (formData.touched.phone && formData.phone.length > 20)) {
       errors.phone = 'Phone number must not be empty'
     }
 
     //validate address
     if (
-      (formData.touched.address && formData.address.length < 10) ||
+      (formData.touched.address && formData.address.length < 5) ||
       (formData.touched.address && formData.address.length > 60)
     ) {
       errors.address = 'Address must be between 10 and 60'
@@ -130,11 +212,32 @@ function Checkout() {
       errors.city = 'City must be between 3 and 50'
     }
 
+    //validate country
     if (
       (formData.touched.country && formData.country.length < 3) ||
       (formData.touched.country && formData.country.length > 50)
     ) {
       errors.country = 'City must be between 3 and 50'
+    }
+
+    // validate card
+    if (formData.payment === "emoney") {
+      console.log(formData.payment)
+      //validate card number
+      if (
+        (formData.touched.cardNumber && formData.cardNumber.length < 6) ||
+        (formData.touched.cardNumber && formData.cardNumber.length > 12)
+      ) {
+        errors.cardNumber = 'Card number must be between 6 and 12'
+      }
+
+      //validate card pin
+      if (
+        (formData.touched.pin && formData.pin.length < 4) ||
+        (formData.touched.cardNumber && formData.cardNumber.length > 8)
+      ) {
+        errors.pin = 'Card pin must be between 4 and 8'
+      }
     }
 
 
@@ -179,8 +282,10 @@ function Checkout() {
                     placeholder="Alex Ward"
                     autoComplete='name'
                     onChange={onChange}
-                    value={name}                 
-                    required="true"
+                    value={name}
+                    min={1}
+                    max={50}
+                    required
                     onBlur={onBlur}
                     className='form-input  border-radius'
                   />
@@ -198,7 +303,9 @@ function Checkout() {
                     autoComplete='email'
                     onChange={onChange}
                     value={email}
-                    aria-required="true"
+                    min={5}
+                    max={50}
+                    required
                     onBlur={onBlur}
                     className='form-input border-radius'
                   />
@@ -215,7 +322,9 @@ function Checkout() {
                     autoComplete='tel'
                     onChange={onChange}
                     value={phone}
-                    aria-required="true"
+                    min={5}
+                    max={20}
+                    required
                     onBlur={onBlur}
                     className='form-input border-radius'
                   />
@@ -239,8 +348,10 @@ function Checkout() {
                     autoComplete='street-address'
                     onChange={onChange}
                     value={address}
+                    min={5}
+                    max={60}
                     className='form-input border-radius'
-                    aria-required="true"
+                    required
                     onBlur={onBlur}
                   />
                   <br />
@@ -256,8 +367,10 @@ function Checkout() {
                     autoComplete='postal-code'
                     onChange={onChange}
                     value={zipCode}
+                    min={3}
+                    max={8}
                     className='form-input border-radius'
-                    aria-required="true"
+                    required
                     onBlur={onBlur}
                   />
                   <br />
@@ -273,8 +386,10 @@ function Checkout() {
                     autoComplete='city'
                     onChange={onChange}
                     value={city}
+                    min={3}
+                    max={50}
                     className='form-input border-radius'
-                    aria-required="true"
+                    required
                     onBlur={onBlur}
                   />
                   <br />
@@ -290,8 +405,10 @@ function Checkout() {
                     autoComplete='country'
                     onChange={onChange}
                     value={country}
+                    min={3}
+                    max={50}
                     className='form-input border-radius'
-                    aria-required="true"
+                    required
                     onBlur={onBlur}
                   />
                   <br />
@@ -350,24 +467,30 @@ function Checkout() {
                 <div className='emoney-payment'>
                   <div className='emoney-payment-number form-input-container'>
                     <label htmlFor="emoney-card-number">e-Money Number</label>
-                    <input type="text"
+                    <input type="number"
                       name="cardNumber"
-                      id="emoney-card-number"
+                      id="card-number"
                       placeholder='238521993'
                       onChange={onChange}
-                      value={emoneyNum}
+                      value={cardNumber}
+                      required
+                      min={6}
+                      max={12}
                       className='form-input border-radius'
                       onBlur={onBlur}
                     />
                   </div>
                   <div className='emoney-payment-number form-input-container'>
                     <label htmlFor="emoney-card-pin">e-Money Pin</label>
-                    <input type="text"
+                    <input type="number"
                       name="pin"
-                      id="emoney-card-pin"
+                      id="card-pin"
                       placeholder='6891'
                       onChange={onChange}
-                      value={emoneyPin}
+                      required
+                      value={pin}
+                      min={4}
+                      max={8}
                       className='form-input border-radius'
                     />
                   </div>
