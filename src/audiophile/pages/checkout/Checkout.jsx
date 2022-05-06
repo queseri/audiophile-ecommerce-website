@@ -57,6 +57,11 @@ function Checkout() {
   const onSubmit = (evt) => {
     evt.preventDefault()
 
+    if (cart.length === 0) {
+      return window.alert("The Cart is empty, Add items to cart first")
+    }
+
+
     // validate()
     console.log(errors)
     if (formData.name === "" ||

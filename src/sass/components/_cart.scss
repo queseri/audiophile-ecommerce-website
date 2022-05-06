@@ -32,7 +32,7 @@
 .overlay {
     display: none;
     position: fixed;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-color: base.$clr-light-gray;
     opacity: 0.98;
@@ -42,7 +42,9 @@
 }
 
 .show-overlay {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cart-heading {
@@ -98,4 +100,19 @@
 
 .cart-title {
     margin-block: 1rem;
+}
+
+.remove-all {
+    background-color: inherit;
+    border-block-start: none;
+    border-inline: none;
+    border-block-end: 1px solid base.$clr-almost-black;
+
+    &:focus,
+    &:hover {       
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.15em;
+        border: none;
+    }
 }

@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import * as Realm from 'realm-web'
+import { toast } from 'react-toastify';
 import { Watch } from 'react-loader-spinner'
 
 export const DataContext = createContext()
@@ -9,7 +10,7 @@ export const DataProvider = (props) => {
 
     const [fetchStatus, setFetchStatus] = useState("idle")
     const [products, setProducts] = useState([])
-    const [quantity, setQuantity] = useState(0)
+    const [quantity, setQuantity] = useState(1)
     const [error, setError] = useState(null)
     const [cart, setCart] = useState([])
     const [isOpen, setIsOpen] = useState(false)
@@ -61,17 +62,41 @@ export const DataProvider = (props) => {
         }
 
         if (cart.length === 0) {
+            toast.success("Item added to cart", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: 1,
+            })
             return setCart(() => ([...cart, newObject]))
         } else {
             const findProduct = cart.find(item => item.id === address)
             console.log(findProduct)
             console.log(cart)
             if (!findProduct) {
-                console.log(cart)
+                toast.success("Another item has been added to cart", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: 1,
+                })
                 return setCart(() => ([...cart, newObject]))
             } else {
-                console.log(cart)
-                console.log(quantity)
+                toast.success("Item is present in the cart", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: 1,
+                })
                 console.log(`the address and the obj id are the same`)
                 return setCart(() => cart.map(item => item.id === address ? { ...item, qty: quantity } : item))
             }
@@ -81,7 +106,7 @@ export const DataProvider = (props) => {
     }
 
     function handleCart(evt) {
-        console.log(evt.target)
+        console.log(evt.target.classList)
         setIsOpen(!isOpen)
     }
 
@@ -91,7 +116,7 @@ export const DataProvider = (props) => {
     }
 
     const handleMinus = () => {
-        quantity <= 0 ? setQuantity(0) : setQuantity(quantity - 1)
+        quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1)
         console.log(cart)
     }
 

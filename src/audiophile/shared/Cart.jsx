@@ -19,16 +19,24 @@ function Cart(props) {
     if (targetObj) {
       setCart(() => cart.map(item => item.id === id ? { ...item, qty: item.qty + 1 } : item))
     }
-    
+
   }
 
   const handleOneItemSubtraction = (id) => {
     const targetObj = cart.find(item => item.id === id)
-    if (targetObj.qty <= 0) return
+    if (targetObj.qty <= 1) {     
+     return window.confirm('Do you want to remove the item from the cart?') && setCart(cart.filter(item => item.id !== id))
+    }
+
     if (targetObj) {
       setCart(() => cart.map(item => item.id === id ? { ...item, qty: item.qty - 1 } : item))
     }
-   
+
+  }
+
+  const handleRemoveAll = (evt) => {
+    console.log(evt.target)
+    setCart(() => [])
   }
 
   return (
@@ -36,7 +44,7 @@ function Cart(props) {
 
       {cart.length === 0 ?
         <div className='cart-main-empty'>
-           <h3 className='cart-title'>the cart is empty</h3>
+          <h3 className='cart-title'>the cart is empty</h3>
           <button className='bg-orange text-white btn-checkout'
             onClick={handleCart}>
             Close Cart
@@ -46,7 +54,7 @@ function Cart(props) {
 
           <div className='cart-heading'>
             <h3 className='cart-title'>Cart</h3>
-            <button className='remove-all'>Remove all</button>
+            <button className='remove-all' onClick={handleRemoveAll}>Remove all</button>
           </div>
 
           <ul className='cart-list'>
