@@ -24,8 +24,7 @@ export const DataProvider = (props) => {
             const REALM_APP_ID = process.env.REACT_APP_AUDIOPHILE;
             const app = new Realm.App({ id: REALM_APP_ID });
             const credentials = Realm.Credentials.anonymous();
-            console.log(REALM_APP_ID)
-
+           
             try {
                 const user = await app.logIn(credentials);
                 const allProducts = await user.functions.getAllProducts()
@@ -48,11 +47,10 @@ export const DataProvider = (props) => {
     }, [quantity, cart])
 
     function addToCart(address, name, currency) {
-        console.log("add to cart function")
+       
         const urlArray = pathname.split("/")
         const partialUrl = urlArray[urlArray.length - 1]
 
-        console.log(`The address or id ${address}`)
         const newObject = {
             id: address,
             productName: name,
@@ -62,42 +60,16 @@ export const DataProvider = (props) => {
         }
 
         if (cart.length === 0) {
-            toast.success("Item added to cart", {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: 1,
-            })
+            toast.success("Item added to cart")           
             return setCart(() => ([...cart, newObject]))
         } else {
-            const findProduct = cart.find(item => item.id === address)
-            console.log(findProduct)
-            console.log(cart)
-            if (!findProduct) {
-                toast.success("Another item has been added to cart", {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: 1,
-                })
+            const findProduct = cart.find(item => item.id === address)           
+            if (!findProduct) {               
+                toast.success("Another item has been added to cart")
                 return setCart(() => ([...cart, newObject]))
-            } else {
-                toast.success("Item is present in the cart", {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: 1,
-                })
-                console.log(`the address and the obj id are the same`)
+            } else {              
+                toast.warning("Item is present in the cart")
+              //  console.log(`the address and the obj id are the same`)
                 return setCart(() => cart.map(item => item.id === address ? { ...item, qty: quantity } : item))
             }
 
@@ -105,19 +77,16 @@ export const DataProvider = (props) => {
 
     }
 
-    function handleCart(evt) {
-        console.log(evt.target.classList)
+    function handleCart() {       
         setIsOpen(!isOpen)
     }
 
     const handleAdd = () => {
-        setQuantity(() => quantity + 1)
-        console.log(cart)
+        setQuantity(() => quantity + 1)      
     }
 
     const handleMinus = () => {
-        quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1)
-        console.log(cart)
+        quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1)       
     }
 
     if (fetchStatus !== "success") {
@@ -141,6 +110,7 @@ export const DataProvider = (props) => {
                 <p>Loading... {timer} sec</p>
             </div>
     }
+   
     return (
         <DataContext.Provider value={{
             products, quantity, handleAdd, handleMinus,

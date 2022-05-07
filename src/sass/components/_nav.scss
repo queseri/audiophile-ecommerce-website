@@ -25,6 +25,7 @@
     width: 100%;
     background-color: base.$clr-white;
     display: none;
+    z-index: 1;
 
     @include utils.mQ(61.25rem) {
         display: flex;

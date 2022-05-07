@@ -8,9 +8,8 @@ function Cart(props) {
   // const numItemsInCart = cart.reduce((total, item) => total + item.qty, 0)
   const totalAmount = cart.reduce((total, item) => (total +
     (item.qty * item.price.replace("$", "").replace(",", ""))), 0)
-  console.log(totalAmount)
+ 
   const navigate = useNavigate()
-
   console.log(navigate)
 
   const handleOneItemAddition = (id) => {
@@ -53,7 +52,7 @@ function Cart(props) {
         <div className='cart-main'>
 
           <div className='cart-heading'>
-            <h3 className='cart-title'>Cart</h3>
+            <h3 className='cart-title'>Cart ({cart.length})</h3>
             <button className='remove-all' onClick={handleRemoveAll}>Remove all</button>
           </div>
 

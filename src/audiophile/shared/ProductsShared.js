@@ -7,10 +7,9 @@ import DecorativeImages from './DecorativeImages'
 function ProductsShared(props) {
     // const [currentProduct, setCurrentProduct] = useState(null)
     const details = props.details ? "product-detail" : ""
-    const { handleAdd, handleMinus, quantity,  addToCart } = useContext(DataContext)
-   // const { pathname } = useLocation()
-   
-   console.log(props)
+    const { handleAdd, handleMinus, quantity, addToCart } = useContext(DataContext)
+    // const { pathname } = useLocation()
+
     return (
         <div className={`shared-products container ${details}`}>
             <div className='shared-products-image-container border-radius'>
@@ -33,10 +32,12 @@ function ProductsShared(props) {
                                 <span className='quantity' aria-live='polite'>
                                     {quantity}
                                 </span>
-                                <button className="btn btn-cart add" onClick={handleAdd}>+</button>                                
+                                <button className="btn btn-cart add" onClick={handleAdd}>+</button>
                             </div>
-                            <button className='btns btn-add-to-cart' 
-                             onClick={() => addToCart(props.address, props.name, props.currency)}>Add to cart</button>
+
+                            <button className='btns btn-add-to-cart'
+                                onClick={() => addToCart(props.address, props.name, props.currency)}>Add to cart</button>
+
                         </div>
 
                     </div>

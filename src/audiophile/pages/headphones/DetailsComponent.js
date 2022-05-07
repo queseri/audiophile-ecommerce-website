@@ -13,7 +13,6 @@ function DetailsComponent() {
   const shortpath = `/${pathname[1]}/`
   const detailsMain = useRef()
 
-  console.log(data)
     useEffect(() => {
         detailsMain.current.focus()
     })

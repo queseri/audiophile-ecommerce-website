@@ -57,6 +57,20 @@ function Checkout() {
   const onSubmit = (evt) => {
     evt.preventDefault()
 
+    // Object to collect error feedback and to display on the form
+    const errors = {
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      zipCode: '',
+      city: '',
+      country: '',
+      payment: '',
+      cardNumber: '',
+      pin: '',
+    }
+
     if (cart.length === 0) {
       return window.alert("The Cart is empty, Add items to cart first")
     }
@@ -227,7 +241,7 @@ function Checkout() {
 
     // validate card
     if (formData.payment === "emoney") {
-      console.log(formData.payment)
+
       //validate card number
       if (
         (formData.touched.cardNumber && formData.cardNumber.length < 6) ||
@@ -298,7 +312,6 @@ function Checkout() {
                     className='form-input  border-radius'
                   />
 
-                  <br />
                   {errors.name && <small className={`error__alert`}>{errors.name}</small>}
                 </div>
 
@@ -317,7 +330,7 @@ function Checkout() {
                     onBlur={onBlur}
                     className='form-input border-radius'
                   />
-                  <br />
+
                   {errors.email && <small className="error__alert">{errors.email}</small>}
                 </div>
 
@@ -336,7 +349,7 @@ function Checkout() {
                     onBlur={onBlur}
                     className='form-input border-radius'
                   />
-                  <br />
+
                   {errors.phone && <small className="error__alert">{errors.phone}</small>}
                 </div>
               </div>
@@ -362,7 +375,7 @@ function Checkout() {
                     required
                     onBlur={onBlur}
                   />
-                  <br />
+
                   {errors.address && <small className="error__alert">{errors.address}</small>}
                 </div>
 
@@ -381,7 +394,7 @@ function Checkout() {
                     required
                     onBlur={onBlur}
                   />
-                  <br />
+
                   {errors.zipCode && <small className="error__alert">{errors.zipCode}</small>}
                 </div>
 
@@ -400,7 +413,7 @@ function Checkout() {
                     required
                     onBlur={onBlur}
                   />
-                  <br />
+
                   {errors.city && <small className="error__alert">{errors.city}</small>}
                 </div>
 
@@ -419,7 +432,7 @@ function Checkout() {
                     required
                     onBlur={onBlur}
                   />
-                  <br />
+
                   {errors.country && <small className="error__alert">{errors.country}</small>}
                 </div>
               </div>

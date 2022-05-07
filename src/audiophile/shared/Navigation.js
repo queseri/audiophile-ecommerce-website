@@ -15,7 +15,6 @@ function Navigation() {
     }
 
     useEffect(() => {
-        console.log(window.document.body.innerHeight)
         if (isOpen) {
             document.body.classList.add('body-hide-overflow');
         } else {

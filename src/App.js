@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
-
+import { ToastContainer } from 'react-toastify';
 import Navigation from './audiophile/shared/Navigation';
 import Footer from './audiophile/shared/Footer';
 import Home from "./audiophile/pages/home/Home";
@@ -10,6 +10,7 @@ import Speakers from './audiophile/pages/speakers/Speakers';
 import DetailsComponent from './audiophile/pages/headphones/DetailsComponent';
 import Checkout from './audiophile/pages/checkout/Checkout';
 import { DataProvider } from "./audiophile/context/Context";
+import "react-toastify/ReactToastify.min.css";
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
   return (
     <DataProvider>
       <div className="App">
-      
+      <ToastContainer limit={1}/>
         <Navigation />
         <Outlet />
         <>
