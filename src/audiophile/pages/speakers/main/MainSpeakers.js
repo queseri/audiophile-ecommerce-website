@@ -11,7 +11,9 @@ function MainSpeakers() {
     console.log(sortProducts)
     return (
         <div className='main'>
+
              <div className='main-products-container'>
+
                 {/*Feature products*/}
                 {sortProducts.map(product => <ProductsShared key={product.id}
                     desktop={product.categoryImage.desktop}
@@ -21,8 +23,11 @@ function MainSpeakers() {
                     description={product.description}
                     address={product.slug}
                 />)}
+
             </div>
+
             <MainPrimaryNavs />
+            
         </div>
     )
 }

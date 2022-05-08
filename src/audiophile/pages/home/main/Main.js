@@ -5,10 +5,13 @@ import Products from './Products'
 function Main() {  
     return (
         <main className='main'>
+
             <MainPrimaryNavs />
+            
             <div className="products">
                 <Products />
             </div>
+
         </main>
     )
 }

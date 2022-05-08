@@ -11,11 +11,29 @@
     max-width: 69.375rem;
     margin-inline: auto;
     padding-block: 3.25rem;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 6.31rem;
+        height: 4px;
+        background-color: base.$clr-orange;
+        left: 50%;
+        margin-left: -3.17rem;
+        top: 0rem;
+    }
 
     @include utils.mQ(38.75rem) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 2rem;
+
+        &::before {           
+            left: 0;
+            margin-left: 2.5rem;           
+        }
+    
     }
 }
 

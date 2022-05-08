@@ -289,14 +289,20 @@ function Checkout() {
           <h2 className='checkout-title' >Checkout</h2>
 
           <form className='form' onSubmit={onSubmit} >
+
             {/* Billing information - start */}
             <fieldset className='billing form-group'>
+
               <legend className='checkout-headers text-orange'>
                 Billing details
               </legend>
+
               <div className='form-inputs-wrapper'>
+
                 <div className='customer-name form-input-container'>
+
                   <label htmlFor="name">Name</label>
+
                   <input type="text"
                     name="name"
                     id="name"
@@ -332,10 +338,13 @@ function Checkout() {
                   />
 
                   {errors.email && <small className="error__alert">{errors.email}</small>}
+
                 </div>
 
                 <div className='customer-phone form-input-container'>
+
                   <label htmlFor="phone">Phone Number</label>
+
                   <input type="tel"
                     name="phone"
                     id="phone"
@@ -351,17 +360,27 @@ function Checkout() {
                   />
 
                   {errors.phone && <small className="error__alert">{errors.phone}</small>}
+
                 </div>
+
               </div>
+
             </fieldset>
             {/* Billing information - end */}
 
             {/* Shipping information - start */}
             <fieldset className='shipping form-group'>
-              <legend className='checkout-headers text-orange'>Shipping info</legend>
+
+              <legend className='checkout-headers text-orange'>
+                Shipping info
+              </legend>
+
               <div className='form-inputs-wrapper'>
+
                 <div className='shipping-address form-input-container'>
+
                   <label htmlFor="address">Your address</label>
+
                   <input type="text"
                     name="address"
                     id="address"
@@ -377,10 +396,13 @@ function Checkout() {
                   />
 
                   {errors.address && <small className="error__alert">{errors.address}</small>}
+
                 </div>
 
                 <div className='shipping-zip-code form-input-container'>
+
                   <label htmlFor="zip-code">ZIP code</label>
+
                   <input type="text"
                     name="zipCode"
                     id="zip-code"
@@ -396,10 +418,13 @@ function Checkout() {
                   />
 
                   {errors.zipCode && <small className="error__alert">{errors.zipCode}</small>}
+
                 </div>
 
                 <div className='city form-input-container'>
+
                   <label htmlFor="city">City</label>
+
                   <input type="text"
                     name="city"
                     id="city"
@@ -415,10 +440,13 @@ function Checkout() {
                   />
 
                   {errors.city && <small className="error__alert">{errors.city}</small>}
+
                 </div>
 
                 <div className='country form-input-container'>
+
                   <label htmlFor="country">country</label>
+
                   <input type="text"
                     name="country"
                     id="country"
@@ -434,19 +462,27 @@ function Checkout() {
                   />
 
                   {errors.country && <small className="error__alert">{errors.country}</small>}
+
                 </div>
+
               </div>
+
             </fieldset>
             {/* Shipping information - end */}
 
             {/* Payment information - start */}
             <fieldset className='payments form-group'>
 
-              <legend className='checkout-headers payment-option-header text-orange'>Payment details</legend>
+              <legend className='checkout-headers payment-option-header text-orange'>
+                Payment details
+              </legend>
+
               <h3 className='payment-title'>Payment method</h3>
+
               <div className='form-inputs-wrapper payment-method'>
 
                 <div className="payment-option form-input-container-radio border-radius">
+
                   <input type="radio"
                     name="payment"
                     id="e-money-option"
@@ -455,10 +491,13 @@ function Checkout() {
                     value="emoney"
                     className='form-input'
                   />
+
                   <label htmlFor="e-money-option">e-Money</label>
+
                 </div>
 
                 <div className='payment-option form-input-container-radio  border-radius'>
+
                   <input type="radio"
                     name="payment"
                     id="cash"
@@ -467,27 +506,38 @@ function Checkout() {
                     value="cash"
                     className='form-input'
                   />
+
                   <label htmlFor="cash">Cash on delivery</label>
+
                 </div>
 
               </div>
+
             </fieldset>
             {/* Payment information - end */}
 
             {/* Payment methods - start */}
             <fieldset className='payment-methods'>
+
               <div className={`cash-payments ${payment !== "emoney" ? "" : "hide-card-details"}`}>
+
                 <img src={CashPayment} alt="" />
+
                 <p className='cash-on-delivery'>
                   The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives
                   at your residence. Just make sure your address is correct so that your order will not be cancelled.
                 </p>
+
               </div>
 
               <div className={`card-payments form-group ${payment !== "emoney" ? "hide-card-details" : ""}`}>
+
                 <div className='emoney-payment'>
+
                   <div className='emoney-payment-number form-input-container'>
+
                     <label htmlFor="emoney-card-number">e-Money Number</label>
+
                     <input type="number"
                       name="cardNumber"
                       id="card-number"
@@ -500,9 +550,13 @@ function Checkout() {
                       className='form-input border-radius'
                       onBlur={onBlur}
                     />
+
                   </div>
+
                   <div className='emoney-payment-number form-input-container'>
+
                     <label htmlFor="emoney-card-pin">e-Money Pin</label>
+
                     <input type="number"
                       name="pin"
                       id="card-pin"
@@ -514,22 +568,32 @@ function Checkout() {
                       max={8}
                       className='form-input border-radius'
                     />
+
                   </div>
+
                 </div>
+
               </div>
 
             </fieldset>
             {/* Payment methods - end */}
           </form>
+
         </div>
+
       </div>
 
-      <CartSummary cart={cart} totalAmount={totalAmount}
-        shippingAmount={shippingAmount} vatAmount={vatAmount}
-        grandTotal={grandTotal} onSubmit={onSubmit} />
+      <CartSummary cart={cart}
+        totalAmount={totalAmount}
+        shippingAmount={shippingAmount}
+        vatAmount={vatAmount}
+        grandTotal={grandTotal}
+        onSubmit={onSubmit} />
 
-      <Confirmation proceedToPay={proceedToPay} cart={cart}
-        grandTotal={grandTotal} handleBack={handleBack} />
+      <Confirmation proceedToPay={proceedToPay}
+        cart={cart}
+        grandTotal={grandTotal}
+        handleBack={handleBack} />
 
     </main>
   )

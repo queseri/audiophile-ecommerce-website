@@ -7,11 +7,12 @@ function ButtonView(props) {
     const hideButton = props.hide ? "hide" : ""
     return (
         <>
-            <Link to={`${props.address}`} className={`btn-view-product ${bgcolor} ${bgtransparent} ${hideButton}`}>
+            <Link to={`${props.address}`}
+                className={`btn-view-product ${bgcolor} ${bgtransparent} ${hideButton}`}>
                 See product
-                <span className='sr-only'>{props.name}</span>                
+                <span className='sr-only'>{props.name}</span>
             </Link>
-           
+
         </>
     )
 }

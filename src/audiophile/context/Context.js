@@ -24,7 +24,7 @@ export const DataProvider = (props) => {
             const REALM_APP_ID = process.env.REACT_APP_AUDIOPHILE;
             const app = new Realm.App({ id: REALM_APP_ID });
             const credentials = Realm.Credentials.anonymous();
-           
+
             try {
                 const user = await app.logIn(credentials);
                 const allProducts = await user.functions.getAllProducts()
@@ -43,11 +43,15 @@ export const DataProvider = (props) => {
     }, [error])
 
     useEffect(() => {
-        console.log(`quantity has been increased`)
+        console.log(`quantity has changed`)
     }, [quantity, cart])
 
     function addToCart(address, name, currency) {
-       
+        
+        // get the pathname from useLocation inorder to use it ,in the image url
+        //  pathname is a string for the current route eg '/headphones/xx99-mark-two-headphones`
+        // get the last part by creating an array - then use the part in the image url
+
         const urlArray = pathname.split("/")
         const partialUrl = urlArray[urlArray.length - 1]
 
@@ -60,16 +64,19 @@ export const DataProvider = (props) => {
         }
 
         if (cart.length === 0) {
-            toast.success("Item added to cart")           
+
+            toast.success("Item added to cart")
             return setCart(() => ([...cart, newObject]))
+
         } else {
-            const findProduct = cart.find(item => item.id === address)           
-            if (!findProduct) {               
+
+            const findProduct = cart.find(item => item.id === address)
+            if (!findProduct) {
                 toast.success("Another item has been added to cart")
                 return setCart(() => ([...cart, newObject]))
-            } else {              
+            } else {
                 toast.warning("Item is present in the cart")
-              //  console.log(`the address and the obj id are the same`)
+                //  console.log(`the address and the obj id are the same`)
                 return setCart(() => cart.map(item => item.id === address ? { ...item, qty: quantity } : item))
             }
 
@@ -77,19 +84,22 @@ export const DataProvider = (props) => {
 
     }
 
-    function handleCart() {       
+    function handleCart() {
         setIsOpen(!isOpen)
     }
 
     const handleAdd = () => {
-        setQuantity(() => quantity + 1)      
+        setQuantity(() => quantity + 1)
     }
 
     const handleMinus = () => {
-        quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1)       
+        quantity <= 1 ? setQuantity(1) : setQuantity(quantity - 1)
     }
 
     if (fetchStatus !== "success") {
+        // the timer , keeps track of the time it takes mongodb realm to
+        // present the data. On average the site is taking 5 seconds
+        // if the time exceeds 10 seconds - this can be a result of poor network
         const fetchStatusTimer = setInterval(() => {
             setTimer(() => timer + 1)
             if (fetchStatus) {
@@ -103,14 +113,14 @@ export const DataProvider = (props) => {
                 <Watch color="#00BFFF" height={200} width={200} />
                 <h2>Loading has taken longer than expected </h2>
                 <p>Please check your network!</p>
-            </div> :
-
+            </div>
+            :
             <div className='loading-flex'>
                 <Watch color="#00BFFF" height={200} width={200} />
                 <p>Loading... {timer} sec</p>
             </div>
     }
-   
+
     return (
         <DataContext.Provider value={{
             products, quantity, handleAdd, handleMinus,

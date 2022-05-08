@@ -5,34 +5,59 @@ import Mark from '../../../assets/shared/desktop/Mark.svg'
 function Confirmation(props) {
     return (
         < div className={`overlay ${props.proceedToPay ? "show-final-order" : ""} `}>
+
             <div className={`final-order container border-radius`}>
+
                 <div className='check-mark-wrapper'>
-                    <img className='check-mark-wrapper-img' src={Mark} alt="" />
+                    <img className='check-mark-wrapper-img'
+                        src={Mark}
+                        alt="" />
                 </div>
+
                 <h3 className='final-order-title'>
                     Thank for your order
                 </h3>
+
                 <p className='thank-you-note'>
                     Thank you for your order
                     You will receive an email confirmation shortly.
                 </p>
 
                 <div className='thank-you-card border-radius'>
+
                     {props.cart.length >= 1 ?
                         <div className='card-sect1-container'>
+
                             <div className='card-sect1'>
+
                                 <div className='cart-img-container border-radius'>
-                                    <img className='cart-item-img' src={props.cart[0].image} alt="" />
+                                    <img className='cart-item-img'
+                                        src={props.cart[0].image}
+                                        alt="" />
                                 </div>
+
                                 <div className='cart-item-detail'>
-                                    <h4 className='cart-item-title'>{props.cart[0].productName.split(" ")[0]}</h4>
+
+                                    <h4 className='cart-item-title'>
+                                        {props.cart[0].productName.split(" ")[0]}
+                                        {props.cart[0].productName.split(" ")[1] === "Mark" ? " M" : ""}
+                                        {props.cart[0].productName.split(" ")[1] === "Mark" ?
+                                            props.cart[0].productName.split(" ")[2] :
+                                            ""}
+                                    </h4>
+
                                     <span className='cart-unit-cost'>
                                         {props.cart[0].price}
                                     </span>
+
                                 </div>
+
                                 <div className='item-quantity'>
-                                    <p className='quantity'>{`x ${props.cart[0].qty}`}</p>
+                                    <p className='quantity'>
+                                        {`x ${props.cart[0].qty}`}
+                                    </p>
                                 </div>
+
                             </div>
 
                             {props.cart.length > 1 ?
@@ -43,6 +68,7 @@ function Confirmation(props) {
                         </div>
                         : ""}
                     <div className='card-sect2-container'>
+
                         <h4 className='grand-total-title'>
                             Grand Total
                         </h4>
@@ -55,7 +81,11 @@ function Confirmation(props) {
                     </div>
                 </div>
 
-                <Link className='btn btn-modal' to="/" onClick={props.handleBack}>Back to home</Link>
+                <Link className='btn btn-modal' to="/"
+                    onClick={props.handleBack}>
+                    Back to home
+                </Link>
+
             </div>
         </div >
 

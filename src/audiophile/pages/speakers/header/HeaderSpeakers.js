@@ -8,8 +8,12 @@ function HeaderSpeakers() {
     })
     return (
         <>
-            <header className='header'  tabIndex="-1" ref={speakersMain}>
+            <header className='header'
+                tabIndex="-1"
+                ref={speakersMain}>
+
                 <HeroShared title="Speakers" />
+
             </header>
         </>
     )

@@ -7,7 +7,7 @@ import Home from "./audiophile/pages/home/Home";
 import Headphones from './audiophile/pages/headphones/Headphones';
 import Earphones from './audiophile/pages/earphones/Earphones';
 import Speakers from './audiophile/pages/speakers/Speakers';
-import DetailsComponent from './audiophile/pages/headphones/DetailsComponent';
+import DetailsComponent from './audiophile/pages/Detailed/DetailsComponent';
 import Checkout from './audiophile/pages/checkout/Checkout';
 import { DataProvider } from "./audiophile/context/Context";
 import "react-toastify/ReactToastify.min.css";

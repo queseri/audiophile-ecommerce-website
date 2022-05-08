@@ -26,6 +26,7 @@ function Navigation() {
         <div className="main-navigation">
             <nav className="nav container flex">
                 <div className="menu-ctrl flex">
+
                     <button className="btns btn-menu-control"
                         aria-controls="menu"
                         aria-haspopup="true"
@@ -39,18 +40,31 @@ function Navigation() {
                 </div>
 
                 <ul className={`nav-list  ${menu ? "nav-list-show" : ""}`} role="menu">
+
                     <NavListBtn address="/" name="Home" onclick={handleMenu} />
                     <NavListBtn address="./headphones" name="Headphones" onclick={handleMenu} />
                     <NavListBtn address="./speakers" name="Speakers" onclick={handleMenu} />
                     <NavListBtn address="./earphones" name="Earphones" onclick={handleMenu} />
+
                 </ul>
 
                 <div className="cart-container">
-                    <button className="btns btn-cart" onClick={handleCart}>
-                        <span className="sr-only">number of items in the cart</span>
+
+                    <button className="btns btn-cart"
+                        onClick={handleCart}>
+
+                        <span className="sr-only">
+                            number of items in the cart
+                        </span>
+
                         <img src={CartIcon} alt="" />
+
                     </button>
-                    <span className={`cart-total ${cart.length === 0 ? "hide-cart-total" : ""}`}>{cart.length}</span>
+
+                    <span className={`cart-total ${cart.length === 0 ? "hide-cart-total" : ""}`}>
+                        {cart.length}
+                    </span>
+
                 </div>
             </nav>
 

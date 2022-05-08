@@ -1,8 +1,8 @@
-import React , { useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 
 import Hero from './Hero'
 
-function Header() {   
+function Header() {
 
     const homeMain = useRef()
     useEffect(() => {
@@ -10,9 +10,13 @@ function Header() {
     })
 
     return (
-        <>            
-            <header className="header" tabIndex="-1" ref={homeMain}>
+        <>
+            <header className="header"
+                tabIndex="-1"
+                ref={homeMain}>
+
                 <Hero />
+
             </header>
         </>
     )

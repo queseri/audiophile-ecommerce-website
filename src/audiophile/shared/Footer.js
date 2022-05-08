@@ -8,7 +8,9 @@ import Twitter from '../../assets/shared/desktop/icon-twitter.svg'
 function Footer() {
     return (
         <footer className='footer'>
+
             <div className='footer-container container'>
+
                 <div className="footer-logo-container">
                     <Logo />
                 </div>
@@ -31,47 +33,75 @@ function Footer() {
                 </p>
 
                 <div className='social-media'>
+
                     <ul className='social-list'>
+
                         <li className='social-link'>
+
                             <a className='btn-social'
                                 rel="noreferrer"
                                 target="_blank"
                                 href="https://www.facebook.com/chamu.mutezva">
-                                <span className='sr-only'>visit our facebook page</span>
+
+                                <span className='sr-only'>
+                                    visit our facebook page
+                                </span>
+
                                 <img src={Facebook}
                                     alt=""
-                                    aria-hidden={true} width="24px" height="24px" />
+                                    aria-hidden={true}
+                                    width="24px"
+                                    height="24px" />
                             </a>
+
                         </li>
 
                         <li className='social-link'>
+
                             <a className='btn-social'
                                 rel="noreferrer"
                                 target="_blank"
                                 href="https://twitter.com/ChamuMutezva">
-                                <span className='sr-only'>visit our twitter page</span>
+
+                                <span className='sr-only'>
+                                    visit our twitter page
+                                </span>
+
                                 <img src={Twitter}
                                     alt=""
-                                    aria-hidden={true} width="24px" height="20px" />
+                                    aria-hidden={true}
+                                    width="24px"
+                                    height="20px" />
                             </a>
+
                         </li>
 
                         <li className='social-link'>
+
                             <a className='btn-social'
                                 rel="noreferrer"
                                 target="_blank"
                                 href="https://www.instagram.com/mutezva/">
-                                <span className='sr-only'>visit our instagram page</span>
+
+                                <span className='sr-only'>
+                                    visit our instagram page
+                                </span>
+
                                 <img src={Instagram}
                                     alt=""
-                                    aria-hidden={true} width="24px" height="24px" />
+                                    aria-hidden={true}
+                                    width="24px"
+                                    height="24px" />
                             </a>
+
                         </li>
+
                     </ul>
 
-
                 </div>
+
             </div>
+            
         </footer >
     )
 }

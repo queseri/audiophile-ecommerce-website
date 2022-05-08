@@ -75,6 +75,14 @@
     text-align: center;
     color: base.$clr-white;
     border: none;
+
+    &:focus,
+    &:hover {       
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: -0.5em;
+        border: none;
+    }
 }
 
 .cart-totals {
@@ -87,6 +95,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    user-select: none;
 }
 
 .cart-list {

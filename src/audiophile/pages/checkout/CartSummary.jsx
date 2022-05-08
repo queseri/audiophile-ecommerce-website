@@ -4,15 +4,29 @@ function CartSummary({ cart, totalAmount, shippingAmount, vatAmount, grandTotal,
     return (
 
         <div className='summary container'>
+
             <h3 className='summary-title'>Summary</h3>
+
             <ul className='checkout-cart-list cart-list'>
-                {cart && cart.map(item => <li key={item.id} className='cart-list-item'>
+                {cart && cart.map(item => <li key={item.id}
+                    className='cart-list-item'>
+
                     <div className='cart-img-container border-radius'>
-                        <img className='cart-item-img' src={item.image} alt="" />
+                        <img className='cart-item-img'
+                            src={item.image}
+                            alt="" />
                     </div>
 
                     <div className='cart-item-detail'>
-                        <h4 className='cart-item-title'>{item.productName.split(" ")[0]}</h4>
+                        {/* the product name is a long string that needs to be shortened in the cart
+                             section. Using the split method to get the name for all the products, but
+                             for the Mark I and Mark II further split to get the M and the I or II                
+                         */}
+                        <h4 className='cart-item-title'>
+                            {item.productName.split(" ")[0]}
+                            {item.productName.split(" ")[1] === "Mark" ? " M" : ""}
+                            {item.productName.split(" ")[1] === "Mark" ? item.productName.split(" ")[2] : ""}
+                        </h4>
                         <span className='cart-unit-cost'>
                             {item.price}
                         </span>
@@ -21,6 +35,7 @@ function CartSummary({ cart, totalAmount, shippingAmount, vatAmount, grandTotal,
                     <div className='item-quantity'>
                         <p className='quantity'>{`x ${item.qty}`}</p>
                     </div>
+
                 </li>)}
             </ul>
 
@@ -51,14 +66,16 @@ function CartSummary({ cart, totalAmount, shippingAmount, vatAmount, grandTotal,
                 </div>
 
                 <div className='grand-totals totals'>
-                    <span className='grand-label'>Grand label</span>
+                    <span className='grand-label'>Grand Total</span>
                     <span className='grand-amount'>
                         {new Intl.NumberFormat('en-US',
                             { style: 'currency', currency: 'USD' }).format(grandTotal)}
                     </span>
                 </div>
 
-                <button type='submit' className='pay-btn bg-orange text-white' onClick={onSubmit} >
+                <button type='submit'
+                    className='pay-btn bg-orange text-white'
+                    onClick={onSubmit} >
                     Continue and pay
                 </button>
             </div>

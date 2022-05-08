@@ -33,7 +33,7 @@ $fs-40: utils.calculateRem(40);
 $fs-56: utils.calculateRem(56);
 
 .container {
-    padding-block: 2rem;
+    padding-block: 1.5rem;
     padding-inline: 1.5rem;
 
     @include utils.mQ(38.75rem) {
