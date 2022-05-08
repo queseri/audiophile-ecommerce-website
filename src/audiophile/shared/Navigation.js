@@ -61,7 +61,8 @@ function Navigation() {
 
                     </button>
 
-                    <span className={`cart-total ${cart.length === 0 ? "hide-cart-total" : ""}`}>
+                    <span aria-live='polite'
+                        className={`cart-total ${cart.length === 0 ? "hide-cart-total" : ""}`}>
                         {cart.length}
                     </span>
 

@@ -19,7 +19,7 @@ function Aside() {
 
                 <h4 className='aside-heading'>
                     Bringing you the
-                    <span className='text-orange'>best</span>
+                    <span className='text-orange'> best </span>
                     audio gear
                 </h4>
 

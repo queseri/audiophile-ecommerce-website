@@ -15,11 +15,10 @@ function Confirmation(props) {
                 </div>
 
                 <h3 className='final-order-title'>
-                    Thank for your order
+                    Thank you for your order
                 </h3>
 
-                <p className='thank-you-note'>
-                    Thank you for your order
+                <p className='thank-you-note'>                  
                     You will receive an email confirmation shortly.
                 </p>
 
