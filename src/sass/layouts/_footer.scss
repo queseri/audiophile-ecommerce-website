@@ -130,3 +130,12 @@
         grid-area: 3/3/3/5;
     }
 }
+
+.btn-social {
+    color: base.$clr-orange;
+    &:hover, &:focus {
+        img {
+            filter: invert(55%) sepia(71%) saturate(425%) hue-rotate(337deg) brightness(89%) contrast(90%);
+        }
+    }
+}

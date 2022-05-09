@@ -8,19 +8,19 @@ import Logo from './Logo'
 
 function Navigation() {
     const [menu, setMenu] = useState(false)
-    const { isOpen, handleCart, cart } = useContext(DataContext)
+    const { isCartOpen, handleCart, cart } = useContext(DataContext)
 
     function handleMenu() {
         setMenu(!menu)
     }
 
     useEffect(() => {
-        if (isOpen) {
+        if (isCartOpen) {
             document.body.classList.add('body-hide-overflow');
         } else {
             document.body.classList.remove('body-hide-overflow');
         }
-    }, [isOpen])
+    }, [isCartOpen])
 
     return (
         <div className="main-navigation">
@@ -69,8 +69,8 @@ function Navigation() {
                 </div>
             </nav>
 
-            <div className={`overlay ${isOpen ? "show-overlay" : ""}`}>
-                <Cart open={isOpen} />
+            <div className={`overlay ${isCartOpen ? "show-overlay" : ""}`}>
+                <Cart open={isCartOpen} />
             </div>
         </div>
     )
