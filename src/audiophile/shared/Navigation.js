@@ -10,8 +10,14 @@ function Navigation() {
     const [menu, setMenu] = useState(false)
     const { isCartOpen, handleCart, cart } = useContext(DataContext)
 
-    function handleMenu() {
+    function handleMenu(evt) {
         setMenu(!menu)
+    }
+
+    function handleMenuLogo() {
+        if (menu) {
+            setMenu(!menu)
+        }
     }
 
     useEffect(() => {
@@ -24,22 +30,23 @@ function Navigation() {
 
     return (
         <div className="main-navigation">
-            <nav className="nav container flex">
+            <nav className="nav container flex" aria-label="main navigation">
                 <div className="menu-ctrl flex">
 
                     <button className="btns btn-menu-control"
-                        aria-controls="menu"
-                        aria-haspopup="true"
+                        aria-label="mobile navigation button"
+                        aria-controls="main-menu"
+                        aria-haspopup="true"                        
                         aria-expanded={menu}
                         onClick={handleMenu}>
                         <img src={Hamburger} alt="" />
                     </button>
 
-                    <Logo header={true} />
+                    <Logo header={true} onClick={handleMenuLogo} />
 
                 </div>
 
-                <ul className={`nav-list  ${menu ? "nav-list-show" : ""}`} role="menu">
+                <ul id="main-menu" className={`nav-list  ${menu ? "nav-list-show" : ""}`} role="menu">
 
                     <NavListBtn address="/" name="Home" onclick={handleMenu} />
                     <NavListBtn address="./headphones" name="Headphones" onclick={handleMenu} />

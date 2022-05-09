@@ -9,7 +9,8 @@ function Footer() {
     return (
         <footer className='footer'>
 
-            <div className='footer-container container'>
+            <nav className='footer-container container'
+                aria-label="footer menu">
 
                 <div className="footer-logo-container">
                     <Logo />
@@ -100,8 +101,8 @@ function Footer() {
 
                 </div>
 
-            </div>
-            
+            </nav>
+
         </footer >
     )
 }

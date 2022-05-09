@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom'
 import { DataContext } from '../context/Context'
 
 function Cart(props) {
@@ -13,8 +13,8 @@ function Cart(props) {
   const totalAmount = cart.reduce((total, item) => (total +
     (item.qty * item.price.replace("$", "").replace(",", ""))), 0)
 
-  const navigate = useNavigate()
-  console.log(navigate)
+  //const navigate = useNavigate()
+ // console.log(navigate)
 
   const handleOneItemAddition = (id) => {
     // get the target object - where the id passed from the function
