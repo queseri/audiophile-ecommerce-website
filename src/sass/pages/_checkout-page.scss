@@ -198,6 +198,11 @@ label {
     // overflow: hidden;
 }
 
+/* Hide the fieldset after an invalid fieldset */
+fieldset:invalid~fieldset {
+    display: none;
+}
+
 .error__alert {
     display: block;
     color: red;

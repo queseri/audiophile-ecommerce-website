@@ -78,10 +78,11 @@ function Checkout() {
 
     // validate()
     console.log(errors)
-    if (formData.name === "" ||
+    if (formData.name.trim("") === "" ||
       formData.name.trim("").length < 1 ||
       formData.name.trim("").length > 50) {
       document.getElementById("name").focus()
+     // console.log(document.getElementById("name").closest("small"))
       return
     }
 
