@@ -27,10 +27,10 @@
 
 .primary-nav-image {
     position: relative;
-    width: 38%;
+    width: 50%;
     margin: auto;
-    top: -2rem;
-    transform: scale(1.6);
+    top: -2rem;  
+    object-fit: contain;
 }
 
 .primary-nav-heading {

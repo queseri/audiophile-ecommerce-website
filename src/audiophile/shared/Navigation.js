@@ -39,7 +39,7 @@ function Navigation() {
                         aria-haspopup="true"                        
                         aria-expanded={menu}
                         onClick={handleMenu}>
-                        <img src={Hamburger} alt="" />
+                        <img src={Hamburger} width="16" height="15" alt="" />
                     </button>
 
                     <Logo header={true} onClick={handleMenuLogo} />
@@ -48,10 +48,10 @@ function Navigation() {
 
                 <ul id="main-menu" className={`nav-list  ${menu ? "nav-list-show" : ""}`} role="menu">
 
-                    <NavListBtn address="/" name="Home" onclick={handleMenu} />
-                    <NavListBtn address="./headphones" name="Headphones" onclick={handleMenu} />
-                    <NavListBtn address="./speakers" name="Speakers" onclick={handleMenu} />
-                    <NavListBtn address="./earphones" name="Earphones" onclick={handleMenu} />
+                    <NavListBtn address="/" name="Home" onclick={handleMenu} roleItem="menuitem" />
+                    <NavListBtn address="./headphones" name="Headphones" onclick={handleMenu} roleItem="menuitem" />
+                    <NavListBtn address="./speakers" name="Speakers" onclick={handleMenu} roleItem="menuitem" />
+                    <NavListBtn address="./earphones" name="Earphones" onclick={handleMenu} roleItem="menuitem" />
 
                 </ul>
 
@@ -64,7 +64,7 @@ function Navigation() {
                             number of items in the cart
                         </span>
 
-                        <img src={CartIcon} alt="" />
+                        <img src={CartIcon} width="23" height="20" alt="" />
 
                     </button>
 

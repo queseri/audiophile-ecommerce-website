@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 
 function NavListBtn(props) {
     return (
-        <li className="nav-list-item">
+        <li className="nav-list-item" role="none">
 
             <Link to={`${props.address}`}
+                role={props.roleItem}
                 className='nav-list-item-btn'
                 onClick={props.onclick}>
                 {props.name}

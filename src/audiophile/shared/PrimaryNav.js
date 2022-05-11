@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 
 //shared
 function PrimaryNav(props) {
-   
+
     return (
         <li className="primary-nav-list-item">
             <img className="primary-nav-image"
                 src={props.src}
+               // width={props.width}
+                // height={props.height}
                 alt=""
                 aria-hidden="true" />
 
@@ -15,7 +17,7 @@ function PrimaryNav(props) {
             <Link to={`${props.address}`} className='primary-nav-btn'>
                 shop
                 <span className='sr-only'> {props.text} </span>
-                <img src={props.forward} alt="" aria-hidden="true" />
+                <img src={props.forward} alt="" width="8" height="12" aria-hidden="true" />
             </Link>
         </li>
     )

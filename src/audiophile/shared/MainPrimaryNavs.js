@@ -17,6 +17,8 @@ function MainPrimaryNavs() {
           src={Headphones}
           forward={Forward}
           address={`${shortpath}headphones`}
+         // width="438"
+          //height="422"
           title="Headphones"
           text=" for headphones here" />
 
@@ -24,6 +26,8 @@ function MainPrimaryNavs() {
           src={Speakers}
           forward={Forward}
           address={`${shortpath}speakers`}
+          //  width="438"
+          //  height="408"
           title="Speakers"
           text=" for speakers here" />
 
@@ -31,6 +35,8 @@ function MainPrimaryNavs() {
           src={Earphones}
           forward={Forward}
           address={`${shortpath}earphones`}
+          // width="438"
+          // height="380"
           title="Earphones"
           text=" for earphones here" />
 

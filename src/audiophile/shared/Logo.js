@@ -23,7 +23,8 @@ function Logo(props) {
             onClick={props.onClick}
             className={`logo-btn ${logoHeaderBtn}`}
             href="./">
-            <img src={LogoImg} alt="" ref={LogoGsap} onMouseEnter={handleFocus} />
+               <span className="sr-only">home page</span>
+            <img src={LogoImg} alt="" width="143" height="25" ref={LogoGsap} onMouseEnter={handleFocus} />
         </Link>
     )
 }

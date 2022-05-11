@@ -17,10 +17,10 @@ function Footer() {
                 </div>
 
                 <ul className={`footer-nav`} role="menu">
-                    <NavListBtn address="/" name="Home" />
-                    <NavListBtn address="./headphones" name="Headphones" />
-                    <NavListBtn address="./speakers" name="Speakers" />
-                    <NavListBtn address="./earphones" name="Earphones" />
+                    <NavListBtn address="/" name="Home" roleItem="menuitem" />
+                    <NavListBtn address="./headphones" name="Headphones" roleItem="menuitem" />
+                    <NavListBtn address="./speakers" name="Speakers" roleItem="menuitem" />
+                    <NavListBtn address="./earphones" name="Earphones" roleItem="menuitem" />
                 </ul>
 
                 <p className='footer-text'>
