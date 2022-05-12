@@ -14,8 +14,7 @@ function MainEarphones() {
     return (
         <main className='main'>
 
-            <div className='main-products-container'>
-                
+            <div className='main-products-container'>                
                 {/*Feature products*/}
                 {sortProducts.map(product => <ProductsShared key={product.id}
                     desktop={product.categoryImage.desktop}

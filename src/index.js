@@ -5,8 +5,10 @@ import { createRoot } from 'react-dom/client';
 import './sass/styles.scss';
 
 import App from './App';
+//import * as serviceWorker from './worker';
 import reportWebVitals from './reportWebVitals';
 
+//serviceWorker.register();
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(<BrowserRouter> <App /></BrowserRouter>);

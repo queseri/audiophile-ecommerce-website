@@ -59,6 +59,7 @@
     outline: none;
     border: none;
     color: base.$clr-orange;
+    text-transform: uppercase;
 
     &:focus,
     &:hover {
@@ -100,10 +101,6 @@
 
 .btn-bg-black {
     background-color: base.$clr-almost-black;
-
-    @include utils.mQ(61.25rem) {
-        //   margin-inline: auto;
-    }
 }
 
 .btn-bg-transparent {

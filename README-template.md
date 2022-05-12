@@ -97,6 +97,15 @@ given an image that is to be used as a background image where the height and wid
      padding-top: (height-of-img / width-of-height * 100)%;
 }``` 
 
+3. ```css
+/* Hide the fieldset after an invalid fieldset */
+fieldset:invalid~fieldset {
+    display: none;
+}```
+
+- the fieldset notes above on point 3 where found in the following article:
+[Fieldset validation - showing sections in stages](https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid#showing_sections_in_stages)
+
 #### Useeffect 
 [A complete guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
 

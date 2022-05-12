@@ -29,11 +29,11 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 2rem;
 
-        &::before {           
+        &::before {
             left: 0;
-            margin-left: 2.5rem;           
+            margin-left: 2.5rem;
         }
-    
+
     }
 }
 
@@ -133,7 +133,9 @@
 
 .btn-social {
     color: base.$clr-orange;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
         img {
             filter: invert(55%) sepia(71%) saturate(425%) hue-rotate(337deg) brightness(89%) contrast(90%);
         }

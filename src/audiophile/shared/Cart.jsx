@@ -14,7 +14,7 @@ function Cart(props) {
     (item.qty * item.price.replace("$", "").replace(",", ""))), 0)
 
   //const navigate = useNavigate()
- // console.log(navigate)
+  // console.log(navigate)
 
   const handleOneItemAddition = (id) => {
     // get the target object - where the id passed from the function
@@ -111,7 +111,7 @@ function Cart(props) {
                 <button className='btn btn-cart btn- minus'
                   onClick={() => handleOneItemSubtraction(item.id)}>-</button>
 
-                <span className={`quantity quantity${item.id}`}>
+                <span className={`quantity quantity${item.id}`} aria-live='polite'>
                   {item.qty}
                 </span>
 
@@ -125,7 +125,7 @@ function Cart(props) {
 
           <div className='cart-totals'>
             <p className='total-label'>Total</p>
-            <p className='total-amount'>
+            <p className='total-amount' aria-live='polite'>
               {new Intl.NumberFormat('en-US',
                 { style: 'currency', currency: 'USD' }).format(totalAmount)}
             </p>

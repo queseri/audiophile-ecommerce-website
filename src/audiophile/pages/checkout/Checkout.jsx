@@ -237,7 +237,7 @@ function Checkout() {
       (formData.touched.country && formData.country.length < 3) ||
       (formData.touched.country && formData.country.length > 50)
     ) {
-      errors.country = 'City must be between 3 and 50'
+      errors.country = 'Country must be between 3 and 50'
     }
 
     // validate card
