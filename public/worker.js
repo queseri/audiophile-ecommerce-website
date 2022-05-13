@@ -1,11 +1,12 @@
 let CACHE_NAME = 'pwa-task-manager';
+
 let urlsToCache = [
     '/',
-    "headphones/:id",
+    "headphones/",
     "headphones",
-    "earphones/:id",
+    "earphones/",
     "earphones",
-    "speakers/:id",
+    "speakers/",
     "speakers",
     "checkout"
 ];

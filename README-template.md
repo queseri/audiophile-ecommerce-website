@@ -106,6 +106,8 @@ fieldset:invalid~fieldset {
 - the fieldset notes above on point 3 where found in the following article:
 [Fieldset validation - showing sections in stages](https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid#showing_sections_in_stages)
 
+- React PWA [React Progressive web app](https://www.codica.com/blog/how-to-create-pwa-with-react/)
+
 #### Useeffect 
 [A complete guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
 
