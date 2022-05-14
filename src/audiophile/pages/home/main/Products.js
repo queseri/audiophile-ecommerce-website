@@ -26,10 +26,10 @@ function Products(props) {
 
     useEffect(() => {
         productsRef.current.forEach((el, index) => {
-            gsap.fromTo(el, { x : "-1000px" },
+            gsap.fromTo(el, { autoAlpha: 0},
                 {
-                    duration: 2,
-                    x: 0,
+                    duration: 1,
+                    autoAlpha: 1,
                     ease: "none", 
                     scrollTrigger: {
                         id: `section-${index + 1}`,

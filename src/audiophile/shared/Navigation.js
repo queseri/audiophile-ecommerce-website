@@ -35,8 +35,7 @@ function Navigation() {
 
                     <button className="btns btn-menu-control"
                         aria-label="mobile navigation button"
-                        aria-controls="main-menu"
-                        aria-haspopup="true"                        
+                        aria-controls="main-menu"                                              
                         aria-expanded={menu}
                         onClick={handleMenu}>
                         <img src={Hamburger} width="16" height="15" alt="" />
