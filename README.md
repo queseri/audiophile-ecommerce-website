@@ -100,7 +100,8 @@ given an image that is to be used as a background image where the height and wid
 /* Hide the fieldset after an invalid fieldset */
 fieldset:invalid~fieldset {
     display: none;
-}```
+}
+```
 
 - the fieldset notes above on point 3 where found in the following article:
 [Fieldset validation - showing sections in stages](https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid#showing_sections_in_stages)
