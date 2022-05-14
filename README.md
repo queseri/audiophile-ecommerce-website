@@ -36,7 +36,7 @@ Users should be able to:
 ### Screenshot
 
 ![home page desktop](./src/assets/Audiophile-ecommerce-website-home-desktop.png)
-![speakers page desktop](../src/assets/Audiophile-ecommerce-website-speakers-desktop.png)
+![speakers page desktop](./src/assets/Audiophile-ecommerce-website-speakers-desktop.png)
 ![headphones page desktop](./src/assets/Audiophile-ecommerce-website-headphones-desktop.png)
 ![earphones page desktop](./src/assets/Audiophile-ecommerce-website-earphones-desktop.png)
 ![checkout page stage 1](./src/assets/Audiophile-ecommerce-website-checkout-desktop.png)
@@ -68,16 +68,19 @@ Users should be able to:
 
 given an image that is to be used as a background image where the height and width of the container is not specified.  The background image will not show up , unless or until the width(which can be specified by `width: 100%` ) and height are given. Setting the height is a bit tricky as using `height: 100% ` does not work. We need to find the aspect ratio for the image to be displayed properly. Read more on here - [Background image - aspect ration](https://www.smashingmagazine.com/2013/07/simple-responsive-images-with-css-background-images/) Solution:
 
-1. ```html
+1. 
+```html
 <div class="main-container">
     <div class="bg-img-container">
         <div class="inner-container">
 
         </div>
     </div>
-</div>```
+</div>
+```
 
-2. ```css
+2.
+ ```css
 .bg-img-container {
   background-image: url("../addresshere");
   background-repeat: no-repeat;
@@ -89,9 +92,11 @@ given an image that is to be used as a background image where the height and wid
      display: block;
      height: 0;
      padding-top: (height-of-img / width-of-height * 100)%;
-}``` 
+}
+``` 
 
-3. ```css
+3. 
+```css
 /* Hide the fieldset after an invalid fieldset */
 fieldset:invalid~fieldset {
     display: none;
