@@ -66,14 +66,14 @@ Users should be able to:
 
 #### Finding the aspect ratio for a background image
 
-given an image that is to be used as a background image where the height and width of the container is not specified.  The background image will not show up , unless or until the width(which can be specified by `width: 100%` ) and height are given. Setting the height is a bit tricky as using `height: 100% ` does not work. We need to find the aspect ratio for the image to be displayed properly. Read more on here - [Background image - aspect ration](https://www.smashingmagazine.com/2013/07/simple-responsive-images-with-css-background-images/) Solution:
+given an image that is to be used as a background image where the height and width of the container is not specified.  The background image will not show up , unless or until the width(which can be specified by `width: 100%` ) and height are given. Setting the height is a bit tricky as using `height: 100% ` does not work. We need to find the aspect ratio for the image to be displayed properly. Read more on here - [Background image - aspect ratio](https://www.smashingmagazine.com/2013/07/simple-responsive-images-with-css-background-images/) Solution:
 
 1. 
 ```html
 <div class="main-container">
     <div class="bg-img-container">
         <div class="inner-container">
-
+            
         </div>
     </div>
 </div>

@@ -20,20 +20,23 @@
 
 .nav-list {
     position: absolute;
+    visibility: hidden;
+    display: block;   
     top: 5rem;
     left: 0;
     width: 100%;
     background-color: base.$clr-white;
-    display: none;
-    z-index: 1;
+    transition: all .26s ease-in-out;
+    z-index: 1;    
 
     @include utils.mQ(61.25rem) {
         display: flex;
         position: relative;
+        visibility: visible;
         top: 0;
         background-color: inherit;
         color: base.$clr-white;
-        justify-content: space-evenly;
+        justify-content: space-evenly;      
     }
 }
 
@@ -47,11 +50,13 @@
 }
 
 .nav-list-show {
-    display: block;
+    visibility: visible;
     padding: 2rem;
-
+   
     @include utils.mQ(61.25rem) {
-        display: flex;
+        visibility: visible;  
+        transition: none;   
+        padding: 0;  
     }
 }
 
