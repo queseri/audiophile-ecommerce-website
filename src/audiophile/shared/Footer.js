@@ -51,8 +51,8 @@ function Footer() {
                                 <img src={Facebook}
                                     alt=""
                                     aria-hidden={true}
-                                    width="24px"
-                                    height="24px" />
+                                    width="24"
+                                    height="24" />
                             </a>
 
                         </li>
@@ -71,8 +71,8 @@ function Footer() {
                                 <img src={Twitter}
                                     alt=""
                                     aria-hidden={true}
-                                    width="24px"
-                                    height="20px" />
+                                    width="24"
+                                    height="20" />
                             </a>
 
                         </li>
@@ -91,8 +91,8 @@ function Footer() {
                                 <img src={Instagram}
                                     alt=""
                                     aria-hidden={true}
-                                    width="24px"
-                                    height="24px" />
+                                    width="24"
+                                    height="24" />
                             </a>
 
                         </li>

@@ -25,6 +25,7 @@ function Products(props) {
     }
 
     useEffect(() => {
+        /*
         productsRef.current.forEach((el, index) => {
             gsap.fromTo(el, { autoAlpha: 0},
                 {
@@ -34,13 +35,12 @@ function Products(props) {
                     scrollTrigger: {
                         id: `section-${index + 1}`,
                         trigger: el,
-                        ease: "yoyo",
-                        //start: "top center",
-                       // markers: true,
+                        ease: "yoyo",                       
                         toggleActions: "play none none reverse"                      
                     }
                 })
         })
+        */
 
     })
 
