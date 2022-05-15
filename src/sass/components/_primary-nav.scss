@@ -14,6 +14,11 @@
         flex-direction: row;
         gap: 1rem;
     }
+
+    @include utils.mQ(61.25rem) {
+        padding-block-start: 5.8rem;
+        padding-block-end: 7.5rem;
+    }
 }
 
 .primary-nav-list-item {
@@ -29,8 +34,13 @@
     position: relative;
     width: 50%;
     margin: auto;
-    top: -2rem;  
+    top: -2rem;
     object-fit: contain;
+
+    @include utils.mQ(61.25rem) {
+        width: 54%;
+        top: -4rem;
+    }
 }
 
 .primary-nav-heading {

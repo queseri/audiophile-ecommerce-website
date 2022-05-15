@@ -38,11 +38,12 @@
 .hero-content-container {
     padding-block: 6rem 6.2rem;
     padding-inline: 1.5rem;
-    max-width: 25.75rem;
+    max-width: 27.75rem;
     margin-inline: auto;
 
     @include utils.mQ(61.25rem) {
         margin-inline-start: 0;
+        padding-block: 9.4rem;
     }
 }
 
@@ -76,6 +77,7 @@
 
     @include utils.mQ(61.25rem) {
         text-align: start;
+        letter-spacing: 2px;
     }
 }
 
@@ -97,5 +99,6 @@
 
     @include utils.mQ(61.25rem) {
         text-align: start;
+        padding-right: 2.5rem;
     }
 }

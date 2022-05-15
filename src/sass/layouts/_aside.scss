@@ -12,6 +12,7 @@
         justify-content: center;
         align-items: center;
         gap: 5rem;
+        padding-block: 10.5rem;
     }
 }
 
@@ -44,6 +45,7 @@
     text-align: center;
     font-size: base.$fs-15;
     line-height: 1.7;
+    opacity: 0.5;
 
     @include utils.mQ(61.25rem) {
         text-align: left;
