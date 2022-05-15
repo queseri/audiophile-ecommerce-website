@@ -17,14 +17,20 @@
 }
 
 .aside-content-container {
-	margin-block-start: 2rem;
+    margin-block-start: 2rem;
 }
 
-.aside-content-container,
-.aside-image-container {
-   
+.aside-content-container {
+
     @include utils.mQ(61.25rem) {
-        flex: 1 1 50%;
+        flex: 1 1 45%;
+    }
+}
+
+.aside-image-container {
+
+    @include utils.mQ(61.25rem) {
+        flex: 1 1 65%;
     }
 }
 
