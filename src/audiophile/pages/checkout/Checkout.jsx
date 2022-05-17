@@ -82,7 +82,7 @@ function Checkout() {
       formData.name.trim("").length < 1 ||
       formData.name.trim("").length > 50) {
       document.getElementById("name").focus()
-     // console.log(document.getElementById("name").closest("small"))
+      // console.log(document.getElementById("name").closest("small"))
       return
     }
 
@@ -254,7 +254,7 @@ function Checkout() {
       //validate card pin
       if (
         (formData.touched.pin && formData.pin.length < 4) ||
-        (formData.touched.cardNumber && formData.cardNumber.length > 8)
+        (formData.touched.pin && formData.pin.length > 8)
       ) {
         errors.pin = 'Card pin must be between 4 and 8'
       }
@@ -265,7 +265,8 @@ function Checkout() {
   }
 
   const errors = validate()
-  // console.log(errors)
+ // console.log(errors)
+
   useEffect(() => {
     if (proceedToPay) {
       window.scrollTo(0, 0);
@@ -317,9 +318,13 @@ function Checkout() {
                     aria-required={true}
                     onBlur={onBlur}
                     className='form-input  border-radius'
+                    aria-describedby="error-name"
                   />
 
-                  {errors.name && <small className={`error__alert`}>{errors.name}</small>}
+                  {errors.name && <small className={`error__alert`}
+                    aria-live="polite"
+                    id="error-name">{errors.name}</small>}
+
                 </div>
 
                 <div className='customer-email form-input-container'>
@@ -328,17 +333,20 @@ function Checkout() {
                     name="email"
                     id="email"
                     placeholder="alexei@mail.com"
-                    autoComplete='email'
+                    autoComplete="email"
                     onChange={onChange}
                     value={email}
                     min={5}
                     max={50}
                     required
                     onBlur={onBlur}
-                    className='form-input border-radius'
+                    className="form-input border-radius"
+                    aria-describedby="error-email"
                   />
 
-                  {errors.email && <small className="error__alert">{errors.email}</small>}
+                  {errors.email && <small id="error-email"
+                    aria-live="polite"
+                    className="error__alert">{errors.email}</small>}
 
                 </div>
 
@@ -357,10 +365,13 @@ function Checkout() {
                     max={20}
                     required
                     onBlur={onBlur}
-                    className='form-input border-radius'
+                    className="form-input border-radius"
+                    aria-describedby="error-phone"
                   />
 
-                  {errors.phone && <small className="error__alert">{errors.phone}</small>}
+                  {errors.phone && <small id="error-phone"
+                    aria-live="polite"
+                    className="error__alert">{errors.phone}</small>}
 
                 </div>
 
@@ -391,12 +402,16 @@ function Checkout() {
                     value={address}
                     min={5}
                     max={60}
-                    className='form-input border-radius'
+                    className="form-input border-radius"
+                    aria-describedby="error-address"
                     required
                     onBlur={onBlur}
+
                   />
 
-                  {errors.address && <small className="error__alert">{errors.address}</small>}
+                  {errors.address && <small id="error-address"
+                    aria-live="polite"
+                    className="error__alert">{errors.address}</small>}
 
                 </div>
 
@@ -413,12 +428,17 @@ function Checkout() {
                     value={zipCode}
                     min={3}
                     max={8}
-                    className='form-input border-radius'
+                    className="form-input border-radius"
+                    aria-describedby="error-zipcode"
                     required
                     onBlur={onBlur}
                   />
 
-                  {errors.zipCode && <small className="error__alert">{errors.zipCode}</small>}
+                  {errors.zipCode && <small id="error-zipcode"
+                    aria-live="polite"
+                    className="error__alert">
+                    {errors.zipCode}
+                  </small>}
 
                 </div>
 
@@ -435,12 +455,17 @@ function Checkout() {
                     value={city}
                     min={3}
                     max={50}
-                    className='form-input border-radius'
+                    className="form-input border-radius"
+                    aria-describedby="error-city"
                     required
                     onBlur={onBlur}
                   />
 
-                  {errors.city && <small className="error__alert">{errors.city}</small>}
+                  {errors.city && <small id="error-city"
+                    aria-live="polite"
+                    className="error__alert">
+                    {errors.city}
+                  </small>}
 
                 </div>
 
@@ -457,12 +482,17 @@ function Checkout() {
                     value={country}
                     min={3}
                     max={50}
-                    className='form-input border-radius'
+                    className="form-input border-radius"
+                    aria-describedby="error-country"
                     required
                     onBlur={onBlur}
                   />
 
-                  {errors.country && <small className="error__alert">{errors.country}</small>}
+                  {errors.country && <small id="error-country"
+                    aria-live="polite"
+                    className="error__alert">
+                    {errors.country}
+                  </small>}
 
                 </div>
 
@@ -490,7 +520,7 @@ function Checkout() {
                     checked={payment === "emoney"}
                     onChange={onChange}
                     value="emoney"
-                    className='form-input'
+                    className="form-input"
                   />
 
                   <label htmlFor="e-money-option">e-Money</label>
@@ -505,7 +535,7 @@ function Checkout() {
                     checked={payment === "cash"}
                     onChange={onChange}
                     value="cash"
-                    className='form-input'
+                    className="form-input"
                   />
 
                   <label htmlFor="cash">Cash on delivery</label>
@@ -548,9 +578,16 @@ function Checkout() {
                       required
                       min={6}
                       max={12}
-                      className='form-input border-radius'
+                      className="form-input border-radius"
+                      aria-describedby="error-card-number"
                       onBlur={onBlur}
                     />
+
+                    {errors.cardNumber && <small id="error-card-number"
+                      aria-live="polite"
+                      className="error__alert">
+                      {errors.cardNumber}
+                    </small>}
 
                   </div>
 
@@ -567,8 +604,16 @@ function Checkout() {
                       value={pin}
                       min={4}
                       max={8}
-                      className='form-input border-radius'
+                      className="form-input border-radius"
+                      aria-describedby="error-pin"
+                      onBlur={onBlur}
                     />
+
+                    {errors.pin && <small id="error-pin"
+                      aria-live="polite"
+                      className="error__alert">
+                      {errors.pin}
+                    </small>}
 
                   </div>
 
