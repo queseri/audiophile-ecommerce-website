@@ -1,10 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 //import { useNavigate } from 'react-router-dom'
 import { DataContext } from '../context/Context'
 
 function Cart(props) {
   const { cart, setCart, handleCart } = useContext(DataContext)
+
+  const cartRef = useRef()
+  useEffect(() => {
+    cartRef.current.focus()
+  })
 
   // calculate the total amount using the reduce method
   // the price amount is a string such as '$1,990.00' - it has to be changed to a number
@@ -55,7 +60,9 @@ function Cart(props) {
   }
 
   return (
-    <div className={`cart border-radius ${props.open ? "show-cart" : ""}`}>
+    <div className={`cart border-radius ${props.open ? "show-cart" : ""}`}
+      tabIndex="-1"
+      ref={cartRef}>
 
       {cart.length === 0 ?
         <div className='cart-main-empty'>

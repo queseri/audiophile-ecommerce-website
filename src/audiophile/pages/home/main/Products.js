@@ -19,7 +19,7 @@ function Products(props) {
 
     const addToRef = (el) => {
         if (el && !productsRef.current.includes(el)) {
-            console.log(el)
+           // console.log(el)
             productsRef.current.push(el)
         }
     }

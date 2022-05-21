@@ -157,11 +157,11 @@ function Checkout() {
 
     document.body.classList.add('body-hide-overflow')
     setProceedToPay(true)
-    console.log(formData)
+  //  console.log(formData)
   }
 
   const onBlur = (e) => {
-    console.log(e)
+  //  console.log(e)
     const { name } = e.target
     setFormData({ ...formData, touched: { ...formData.touched, [name]: true } })
   }
@@ -189,13 +189,13 @@ function Checkout() {
     //validate name
     if ((formData.touched.name && formData.name.trim("").length < 1) ||
       (formData.touched.name && formData.name.trim("").length > 30)) {
-      errors.name = 'First name must be between 1 and 30'
+      errors.name = 'Name must be between 1 and 30 characters in length'
     }
 
     //validate email
     if ((formData.touched.email && formData.email.trim("").length <= 5) ||
       (formData.touched.email && formData.email.trim("").length > 50)) {
-      errors.email = 'Email must be between 5 and 50 letters'
+      errors.email = 'Email must be between 5 and 50 characters'
     }
 
     if ((formData.touched.email && !formData.email.match(validEmail))) {
@@ -213,7 +213,7 @@ function Checkout() {
       (formData.touched.address && formData.address.length < 5) ||
       (formData.touched.address && formData.address.length > 60)
     ) {
-      errors.address = 'Address must be between 10 and 60'
+      errors.address = 'Address must be between 10 and 60 characters in length'
     }
 
     //validate zipCode
@@ -221,7 +221,7 @@ function Checkout() {
       (formData.touched.zipCode && formData.zipCode.length < 3) ||
       (formData.touched.zipCode && formData.zipCode.length > 8)
     ) {
-      errors.zipCode = 'zip code must be between 3 and 8'
+      errors.zipCode = 'zip code must be between 3 and 8 characters in length'
     }
 
     //validate city
@@ -229,7 +229,7 @@ function Checkout() {
       (formData.touched.city && formData.city.length < 3) ||
       (formData.touched.city && formData.city.length > 50)
     ) {
-      errors.city = 'City must be between 3 and 50'
+      errors.city = 'City must be between 3 and 50 characters in length'
     }
 
     //validate country
@@ -237,7 +237,7 @@ function Checkout() {
       (formData.touched.country && formData.country.length < 3) ||
       (formData.touched.country && formData.country.length > 50)
     ) {
-      errors.country = 'Country must be between 3 and 50'
+      errors.country = 'Country must be between 3 and 50 characters in length'
     }
 
     // validate card
@@ -248,7 +248,7 @@ function Checkout() {
         (formData.touched.cardNumber && formData.cardNumber.length < 6) ||
         (formData.touched.cardNumber && formData.cardNumber.length > 12)
       ) {
-        errors.cardNumber = 'Card number must be between 6 and 12'
+        errors.cardNumber = 'Card number must be between 6 and 12 characters in length'
       }
 
       //validate card pin
@@ -256,7 +256,7 @@ function Checkout() {
         (formData.touched.pin && formData.pin.length < 4) ||
         (formData.touched.pin && formData.pin.length > 8)
       ) {
-        errors.pin = 'Card pin must be between 4 and 8'
+        errors.pin = 'Card pin must be between 4 and 8 characters in length'
       }
     }
 
