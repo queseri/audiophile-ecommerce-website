@@ -28,7 +28,9 @@ function ProductsShared(props) {
 
                         <div className='cart-divider'>
                             <div className='quantity-control'>
-                                <button className='btn btn-cart btn- minus' onClick={handleMinus}>-</button>
+                                <button className='btn btn-cart btn- minus' onClick={handleMinus}>
+                                    -<span className="sr-only">subtract</span>
+                                </button>
                                 <span className='quantity' aria-live='polite'>
                                     {quantity}
                                 </span>

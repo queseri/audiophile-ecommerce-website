@@ -8,7 +8,10 @@ function Cart(props) {
 
   const cartRef = useRef()
   useEffect(() => {
-    cartRef.current.focus()
+    if (props.open) {
+      cartRef.current.focus()
+    }
+
   })
 
   // calculate the total amount using the reduce method
@@ -116,7 +119,9 @@ function Cart(props) {
 
               <div className='quantity-control'>
                 <button className='btn btn-cart btn- minus'
-                  onClick={() => handleOneItemSubtraction(item.id)}>-</button>
+                  onClick={() => handleOneItemSubtraction(item.id)}>-
+                  <span className="sr-only">subtract</span>
+                </button>
 
                 <span className={`quantity quantity${item.id}`} aria-live='polite'>
                   {item.qty}
