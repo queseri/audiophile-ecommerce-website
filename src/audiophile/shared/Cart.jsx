@@ -108,7 +108,7 @@ function Cart(props) {
                 */}
                 <h4 className='cart-item-title'>
                   {item.productName.split(" ")[0]}
-                  {item.productName.split(" ")[1] === "Mark" ? " M" : ""}
+                  {item.productName.split(" ")[1] === "Mark" ? " MK" : ""}
                   {item.productName.split(" ")[1] === "Mark" ? item.productName.split(" ")[2] : ""}
                 </h4>
 
